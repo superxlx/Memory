@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A17477A1AC5860400B2B576"
+               BlueprintIdentifier = "2AF310DE1AC80C6E00A6AADC"
                BuildableName = "Memory.app"
                BlueprintName = "Memory"
                ReferencedContainer = "container:Memory.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A1747921AC5860400B2B576"
+               BlueprintIdentifier = "2AF310F61AC80C6E00A6AADC"
                BuildableName = "MemoryTests.xctest"
                BlueprintName = "MemoryTests"
                ReferencedContainer = "container:Memory.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A1747921AC5860400B2B576"
+               BlueprintIdentifier = "2AF310F61AC80C6E00A6AADC"
                BuildableName = "MemoryTests.xctest"
                BlueprintName = "MemoryTests"
                ReferencedContainer = "container:Memory.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A17477A1AC5860400B2B576"
+            BlueprintIdentifier = "2AF310DE1AC80C6E00A6AADC"
             BuildableName = "Memory.app"
             BlueprintName = "Memory"
             ReferencedContainer = "container:Memory.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A17477A1AC5860400B2B576"
+            BlueprintIdentifier = "2AF310DE1AC80C6E00A6AADC"
             BuildableName = "Memory.app"
             BlueprintName = "Memory"
             ReferencedContainer = "container:Memory.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A17477A1AC5860400B2B576"
+            BlueprintIdentifier = "2AF310DE1AC80C6E00A6AADC"
             BuildableName = "Memory.app"
             BlueprintName = "Memory"
             ReferencedContainer = "container:Memory.xcodeproj">
