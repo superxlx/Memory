@@ -1,20 +1,18 @@
 //
-//  AddMemoViewController.swift
+//  AddBillViewController.swift
 //  Memory
 //
-//  Created by xlx on 15/3/29.
+//  Created by xlx on 15/3/30.
 //  Copyright (c) 2015年 xlx. All rights reserved.
 //
 
 import UIKit
 
-class AddMemoViewController: UIViewController {
+class AddBillViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-        
         // Do any additional setup after loading the view.
     }
 
@@ -24,10 +22,10 @@ class AddMemoViewController: UIViewController {
     }
     
 
-    @IBAction func cancel(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
     @IBAction func save(sender: AnyObject) {
+    }
+    @IBAction func cenael(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion:nil)
     }
     /*
     // MARK: - Navigation

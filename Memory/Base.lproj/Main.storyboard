@@ -96,11 +96,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nLK-ed-pqJ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="nLK-ed-pqJ">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nLK-ed-pqJ" id="lcI-yQ-8iv">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="7d2-ey-k2K" kind="show" id="pOr-gt-bba"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -108,11 +111,69 @@
                             <outlet property="delegate" destination="632-Re-eg1" id="RSO-WZ-jtE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="账单" id="XQE-x8-3Q9"/>
+                    <navigationItem key="navigationItem" title="账单" id="XQE-x8-3Q9">
+                        <barButtonItem key="rightBarButtonItem" image="plus circle" id="WOi-0y-6eg">
+                            <color key="tintColor" red="0.18255268860000001" green="0.99676804320000001" blue="0.51625173170000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="sdb-PS-NlQ" kind="presentation" id="1v9-Fl-wzU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kC-a6-fKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1332" y="281"/>
+        </scene>
+        <!--账单详细-->
+        <scene sceneID="ZI6-Hn-rkX">
+            <objects>
+                <viewController id="7d2-ey-k2K" customClass="AddBillViewController" customModule="Memory" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2dO-uj-stW"/>
+                        <viewControllerLayoutGuide type="bottom" id="4RR-10-Ac7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wna-Ux-xgF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="账单详细" id="miW-Oe-jxw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R3d-tA-Fku" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3455" y="281"/>
+        </scene>
+        <!--添加-->
+        <scene sceneID="lWQ-D6-aPi">
+            <objects>
+                <viewController id="tyk-hU-HDH" customClass="AddBillViewController" customModule="Memory" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ovY-Tv-hom"/>
+                        <viewControllerLayoutGuide type="bottom" id="F2D-gE-lN7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="de5-zQ-g5s">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="添加" id="h3Y-A1-Knu">
+                        <barButtonItem key="leftBarButtonItem" title="保存" id="wbX-uo-QIS">
+                            <color key="tintColor" red="0.18255268860000001" green="0.99676804320000001" blue="0.51625173170000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="save:" destination="tyk-hU-HDH" id="TfT-dP-epb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="取消" id="6Ik-zw-sgk">
+                            <color key="tintColor" red="0.18255268860000001" green="0.99676804320000001" blue="0.51625173170000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cenael:" destination="tyk-hU-HDH" id="c00-o4-tNs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FvO-K9-Uct" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2782" y="281"/>
         </scene>
         <!--提醒-->
         <scene sceneID="5ER-qN-ZVZ">
@@ -312,6 +373,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybq-5W-HVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1970" y="-426"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cfU-Sy-ZES">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sdb-PS-NlQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GOQ-AU-Hy9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tyk-hU-HDH" kind="relationship" relationship="rootViewController" id="AC4-6d-GSl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZaU-vj-Jqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1970" y="281"/>
         </scene>
     </scenes>
     <resources>

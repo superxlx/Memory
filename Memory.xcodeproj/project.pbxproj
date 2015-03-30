@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2ACBCB9D1AC99F8900832243 /* AddBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */; };
 		2AF310E51AC80C6E00A6AADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF310E41AC80C6E00A6AADC /* AppDelegate.swift */; };
 		2AF310E81AC80C6E00A6AADC /* Memory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2AF310E61AC80C6E00A6AADC /* Memory.xcdatamodeld */; };
 		2AF310ED1AC80C6E00A6AADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF310EB1AC80C6E00A6AADC /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBillViewController.swift; sourceTree = "<group>"; };
 		2AF310DF1AC80C6E00A6AADC /* Memory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AF310E31AC80C6E00A6AADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AF310E41AC80C6E00A6AADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				2AF311271AC847C100A6AADC /* AddMemoViewController.swift */,
 				2AF311311AC85C2700A6AADC /* BillTableViewController.swift */,
 				2AF311331AC85C5300A6AADC /* RemindTableViewController.swift */,
+				2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				2AF311221AC8391F00A6AADC /* TabBarViewController.swift in Sources */,
 				2AF311241AC83A2900A6AADC /* OverViewTableViewController.swift in Sources */,
 				2AF311381AC85C8200A6AADC /* EssayTableViewController.swift in Sources */,
+				2ACBCB9D1AC99F8900832243 /* AddBillViewController.swift in Sources */,
 				2AF311321AC85C2700A6AADC /* BillTableViewController.swift in Sources */,
 				2AF311361AC85C6000A6AADC /* MemoTableViewController.swift in Sources */,
 				2AF310E51AC80C6E00A6AADC /* AppDelegate.swift in Sources */,
