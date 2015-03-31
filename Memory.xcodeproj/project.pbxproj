@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A6EFB071ACA537B008091E5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6EFB061ACA537B008091E5 /* back.png */; };
+		2AC4A06F1ACADBF800D73D82 /* Memory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4A06D1ACADBF800D73D82 /* Memory.xcdatamodeld */; };
+		2AC4A0711ACAEC3A00D73D82 /* protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4A0701ACAEC3A00D73D82 /* protocol.swift */; };
 		2ACBCB9D1AC99F8900832243 /* AddBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */; };
 		2AF310E51AC80C6E00A6AADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF310E41AC80C6E00A6AADC /* AppDelegate.swift */; };
-		2AF310E81AC80C6E00A6AADC /* Memory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2AF310E61AC80C6E00A6AADC /* Memory.xcdatamodeld */; };
 		2AF310ED1AC80C6E00A6AADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF310EB1AC80C6E00A6AADC /* Main.storyboard */; };
 		2AF310EF1AC80C6E00A6AADC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AF310EE1AC80C6E00A6AADC /* Images.xcassets */; };
 		2AF310F21AC80C6E00A6AADC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF310F01AC80C6E00A6AADC /* LaunchScreen.xib */; };
@@ -34,11 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A6EFB061ACA537B008091E5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		2AC4A06E1ACADBF800D73D82 /* Memory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Memory.xcdatamodel; sourceTree = "<group>"; };
+		2AC4A0701ACAEC3A00D73D82 /* protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = protocol.swift; sourceTree = "<group>"; };
 		2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBillViewController.swift; sourceTree = "<group>"; };
 		2AF310DF1AC80C6E00A6AADC /* Memory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AF310E31AC80C6E00A6AADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AF310E41AC80C6E00A6AADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2AF310E71AC80C6E00A6AADC /* Memory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Memory.xcdatamodel; sourceTree = "<group>"; };
 		2AF310EC1AC80C6E00A6AADC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2AF310EE1AC80C6E00A6AADC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2AF310F11AC80C6E00A6AADC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -72,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A6EFB051ACA536A008091E5 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				2A6EFB061ACA537B008091E5 /* back.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
 		2AF310D61AC80C6E00A6AADC = {
 			isa = PBXGroup;
 			children = (
@@ -93,13 +105,14 @@
 		2AF310E11AC80C6E00A6AADC /* Memory */ = {
 			isa = PBXGroup;
 			children = (
+				2A6EFB051ACA536A008091E5 /* image */,
 				2AF310E41AC80C6E00A6AADC /* AppDelegate.swift */,
 				2AF310EB1AC80C6E00A6AADC /* Main.storyboard */,
 				2AF310EE1AC80C6E00A6AADC /* Images.xcassets */,
 				2AF310F01AC80C6E00A6AADC /* LaunchScreen.xib */,
-				2AF310E61AC80C6E00A6AADC /* Memory.xcdatamodeld */,
 				2AF310E21AC80C6E00A6AADC /* Supporting Files */,
 				2AF311211AC8391F00A6AADC /* TabBarViewController.swift */,
+				2AC4A0701ACAEC3A00D73D82 /* protocol.swift */,
 				2AF311371AC85C8200A6AADC /* EssayTableViewController.swift */,
 				2AF311231AC83A2900A6AADC /* OverViewTableViewController.swift */,
 				2AF311351AC85C6000A6AADC /* MemoTableViewController.swift */,
@@ -107,6 +120,7 @@
 				2AF311311AC85C2700A6AADC /* BillTableViewController.swift */,
 				2AF311331AC85C5300A6AADC /* RemindTableViewController.swift */,
 				2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */,
+				2AC4A06D1ACADBF800D73D82 /* Memory.xcdatamodeld */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -216,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A6EFB071ACA537B008091E5 /* back.png in Resources */,
 				2AF310ED1AC80C6E00A6AADC /* Main.storyboard in Resources */,
 				2AF310F21AC80C6E00A6AADC /* LaunchScreen.xib in Resources */,
 				2AF310EF1AC80C6E00A6AADC /* Images.xcassets in Resources */,
@@ -236,14 +251,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AF310E81AC80C6E00A6AADC /* Memory.xcdatamodeld in Sources */,
 				2AF311281AC847C100A6AADC /* AddMemoViewController.swift in Sources */,
 				2AF311221AC8391F00A6AADC /* TabBarViewController.swift in Sources */,
+				2AC4A06F1ACADBF800D73D82 /* Memory.xcdatamodeld in Sources */,
 				2AF311241AC83A2900A6AADC /* OverViewTableViewController.swift in Sources */,
 				2AF311381AC85C8200A6AADC /* EssayTableViewController.swift in Sources */,
 				2ACBCB9D1AC99F8900832243 /* AddBillViewController.swift in Sources */,
 				2AF311321AC85C2700A6AADC /* BillTableViewController.swift in Sources */,
 				2AF311361AC85C6000A6AADC /* MemoTableViewController.swift in Sources */,
+				2AC4A0711ACAEC3A00D73D82 /* protocol.swift in Sources */,
 				2AF310E51AC80C6E00A6AADC /* AppDelegate.swift in Sources */,
 				2AF311341AC85C5300A6AADC /* RemindTableViewController.swift in Sources */,
 			);
@@ -453,12 +469,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2AF310E61AC80C6E00A6AADC /* Memory.xcdatamodeld */ = {
+		2AC4A06D1ACADBF800D73D82 /* Memory.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2AF310E71AC80C6E00A6AADC /* Memory.xcdatamodel */,
+				2AC4A06E1ACADBF800D73D82 /* Memory.xcdatamodel */,
 			);
-			currentVersion = 2AF310E71AC80C6E00A6AADC /* Memory.xcdatamodel */;
+			currentVersion = 2AC4A06E1ACADBF800D73D82 /* Memory.xcdatamodel */;
 			path = Memory.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

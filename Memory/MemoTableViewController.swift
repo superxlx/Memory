@@ -7,20 +7,28 @@
 //
 
 import UIKit
+import CoreData
+class MemoTableViewController: UITableViewController,MemosureDelegate{
 
-class MemoTableViewController: UITableViewController {
-
+    @IBOutlet var tableview: UITableView!
+    var context:NSManagedObjectContext!
+    var contextdetial=[AnyObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName:UIColor.greenColor()]
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        var entity=NSFetchRequest(entityName: "Memo")
+        self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+        self.contextdetial=context!.executeFetchRequest(entity, error: nil)!
+        
+        // self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
-
+    func memoreload(){
+        var entity=NSFetchRequest(entityName: "Memo")
+        self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+        self.contextdetial=context!.executeFetchRequest(entity, error: nil)!
+        self.tableview.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,24 +39,32 @@ class MemoTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return contextdetial.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+        let title=cell.viewWithTag(1) as UILabel
+        title.text=contextdetial[indexPath.row].valueForKey("title") as?  String
+        let islock:Bool=contextdetial[indexPath.row].valueForKey("lock") as Bool
+        let lockimage=cell.viewWithTag(2) as UIImageView
+        if islock {
+            lockimage.image=UIImage(named: "locked")
+        }
         return cell
     }
-    */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let navigationController = segue.destinationViewController as UINavigationController
+        let controller = navigationController.topViewController as AddMemoViewController
+        controller.Memodelegate = self
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -89,10 +105,7 @@ class MemoTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
+    
     */
 
 }

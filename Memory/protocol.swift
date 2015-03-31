@@ -1,0 +1,3 @@
+protocol MemosureDelegate{
+    func memoreload()
+}
