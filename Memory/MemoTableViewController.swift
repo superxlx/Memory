@@ -21,7 +21,7 @@ class MemoTableViewController: UITableViewController,MemosureDelegate{
         self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
         self.contextdetial=context!.executeFetchRequest(entity, error: nil)!
         
-        // self.navigationItem.leftBarButtonItem = self.editButtonItem()
+         self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
     func memoreload(){
         var entity=NSFetchRequest(entityName: "Memo")
@@ -52,7 +52,11 @@ class MemoTableViewController: UITableViewController,MemosureDelegate{
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
         let title=cell.viewWithTag(1) as UILabel
-        title.text=contextdetial[indexPath.row].valueForKey("title") as?  String
+        var titlecontent:String=contextdetial[indexPath.row].valueForKey("title") as  String
+        if titlecontent=="" {
+            titlecontent="未命名"
+        }
+        title.text=titlecontent
         let islock:Bool=contextdetial[indexPath.row].valueForKey("lock") as Bool
         let lockimage=cell.viewWithTag(2) as UIImageView
         if islock {
@@ -64,27 +68,25 @@ class MemoTableViewController: UITableViewController,MemosureDelegate{
         let navigationController = segue.destinationViewController as UINavigationController
         let controller = navigationController.topViewController as AddMemoViewController
         controller.Memodelegate = self
+        if segue.identifier=="view" {
+            
+        }
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
+    
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        
+        self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+        context.deleteObject(self.contextdetial[indexPath.row] as NSManagedObject)
+        context.save(nil)
+        var entity=NSFetchRequest(entityName: "Memo")
+        self.contextdetial=context.executeFetchRequest(entity, error: nil)!
+        
+        tableview.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Top)
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

@@ -15,6 +15,7 @@ class OverViewTableViewController: UIViewController {
         super.viewDidLoad()
 
         self.tabBarController?.tabBar.selectedImageTintColor=UIColor.purpleColor()
+    //    self.navigationController?.navigationBar.backgroundColor=UIColor(red: 249/255, green: 225/255, blue: 222/255, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName:UIColor.greenColor()]
         
     }
