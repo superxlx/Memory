@@ -8,14 +8,42 @@
 
 import UIKit
 import CoreData
-class AddBillViewController: UIViewController {
+class AddBillViewController: UIViewController,UITableViewDelegate{
 
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var lockstate: UIButton!
+
+    @IBOutlet weak var tableview: UITableView!
+    var islock=false
+    var delegate:UITableViewDelegate!
+    var addcount=2
     override func viewDidLoad() {
         super.viewDidLoad()
+        var date=NSDate()
+        var dateFormat=NSDateFormatter()
+        dateFormat.dateFormat="YYYY年MM月dd日HH时mm分"
+        var dat=dateFormat.stringFromDate(date)
+        self.time.text=dat
+     
+        self.tableview.separatorStyle=UITableViewCellSeparatorStyle.None
 
-        // Do any additional setup after loading the view.
+        
     }
-
+    override func viewWillAppear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("handleKeyboardDidShow:"), name:UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("handleKeyboardDidHidden"), name:UIKeyboardWillHideNotification, object: nil)
+        super.viewWillAppear(true)
+        
+    }
+    func handleKeyboardDidShow(paramNotification:NSNotification){
+        var userinfo:NSDictionary=(NSDictionary)(dictionary: paramNotification.userInfo!)
+        var v:NSValue=userinfo.objectForKey(UIKeyboardFrameBeginUserInfoKey) as NSValue
+        var keyboardRect=v.CGRectValue()
+        self.tableview.contentInset=UIEdgeInsetsMake(0, 0, keyboardRect.size.height, 0)
+    }
+    func handleKeyboardDidHidden(){
+        self.tableview.contentInset=UIEdgeInsetsZero
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -25,17 +53,57 @@ class AddBillViewController: UIViewController {
     @IBAction func save(sender: AnyObject) {
        
     }
+    @IBAction func lock(sender: AnyObject) {
+        if islock {
+            self.lockstate.setImage(UIImage(named: "unlocked"), forState: UIControlState.Normal)
+            self.islock=false
+        }else{
+            self.lockstate.setImage(UIImage(named: "locked"), forState: UIControlState.Normal)
+            self.islock=true
+        }
+    }
+
     @IBAction func cenael(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion:nil)
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+            // #warning Potentially incomplete method implementation.
+            // Return the number of sections.
+        return 1
     }
-    */
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            // #warning Incomplete method implementation.
+            // Return the number of rows in the section.
+        return addcount
+    }
+    
+    
+    @IBAction func addBillcount(sender: AnyObject) {
+        self.addcount++
+        self.tableview.reloadData()
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+    
+        if indexPath.row == addcount-1 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as UITableViewCell
+            return cell
+        }else if indexPath.row == addcount-2 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+            var label=cell.viewWithTag(1)
+            label?.becomeFirstResponder()
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+            return cell
+        }
+        
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableview.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
 }
