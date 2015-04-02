@@ -458,11 +458,77 @@
                             <outlet property="delegate" destination="QLR-MG-OKp" id="p91-h0-XT0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="提醒" id="BMT-HJ-ysn"/>
+                    <navigationItem key="navigationItem" title="提醒" id="BMT-HJ-ysn">
+                        <barButtonItem key="rightBarButtonItem" image="plus circle" id="Qc3-R1-5ot">
+                            <color key="tintColor" red="0.18255268860000001" green="0.99676804320000001" blue="0.51625173170000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="hGd-XY-vJp" kind="presentation" id="sj0-wF-4rl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQh-wc-5pL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="639" y="987"/>
+        </scene>
+        <!--添加-->
+        <scene sceneID="KLF-Os-SHh">
+            <objects>
+                <viewController id="dWr-9H-Mg4" customClass="AddRemindViewController" customModule="Memory" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xyB-R9-JX2"/>
+                        <viewControllerLayoutGuide type="bottom" id="fsj-nq-QJy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ohY-8h-em9" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="推送内容..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ucw-3d-joE">
+                                <rect key="frame" x="16" y="114" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="MEO-tD-6DW">
+                                <rect key="frame" x="0.0" y="194" width="600" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="BA6-Ii-PMs"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="449680324.42137498">
+                                    <!--2015-04-02 15:12:04 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647064920000004" green="0.96862751250000001" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="MEO-tD-6DW" firstAttribute="leading" secondItem="ohY-8h-em9" secondAttribute="leadingMargin" constant="-16" id="5JG-HS-vWw"/>
+                            <constraint firstItem="Ucw-3d-joE" firstAttribute="trailing" secondItem="ohY-8h-em9" secondAttribute="trailingMargin" id="O9a-Ft-hDd"/>
+                            <constraint firstItem="Ucw-3d-joE" firstAttribute="top" secondItem="xyB-R9-JX2" secondAttribute="bottom" constant="50" id="Prv-ac-KUL"/>
+                            <constraint firstItem="Ucw-3d-joE" firstAttribute="leading" secondItem="ohY-8h-em9" secondAttribute="leadingMargin" id="VPh-Wd-hjY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MEO-tD-6DW" secondAttribute="trailing" constant="-16" id="j2U-Ut-t0k"/>
+                            <constraint firstItem="MEO-tD-6DW" firstAttribute="top" secondItem="Ucw-3d-joE" secondAttribute="bottom" constant="50" id="rLZ-kt-X8N"/>
+                        </constraints>
+                        <connections>
+                            <action selector="hiddenKeyBoard:" destination="dWr-9H-Mg4" eventType="touchDown" id="lp5-OC-EDL"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="添加" id="orH-mf-wdy">
+                        <barButtonItem key="leftBarButtonItem" title="保存" id="gOy-S5-NJy">
+                            <color key="tintColor" red="0.18255268860000001" green="0.99676804320000001" blue="0.51625173170000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="save:" destination="dWr-9H-Mg4" id="lbh-eh-lnH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="取消" id="da9-8v-6Ai">
+                            <color key="tintColor" red="0.18255268860000001" green="0.99676804320000001" blue="0.51625173170000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancel:" destination="dWr-9H-Mg4" id="AJV-MV-vzf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fia-be-fgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2134" y="987"/>
         </scene>
         <!--提醒-->
         <scene sceneID="gAM-iz-gcS">
@@ -670,6 +736,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaU-vj-Jqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1970" y="281"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kwg-eS-vN0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hGd-XY-vJp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WyK-kc-DFB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dWr-9H-Mg4" kind="relationship" relationship="rootViewController" id="DKw-HZ-Cn3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vJS-qt-7w6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1322" y="987"/>
         </scene>
     </scenes>
     <resources>
