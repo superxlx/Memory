@@ -122,8 +122,8 @@
 				2AF311311AC85C2700A6AADC /* BillTableViewController.swift */,
 				2AF311331AC85C5300A6AADC /* RemindTableViewController.swift */,
 				2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */,
-				2AC4A06D1ACADBF800D73D82 /* Memory.xcdatamodeld */,
 				2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */,
+				2AC4A06D1ACADBF800D73D82 /* Memory.xcdatamodeld */,
 			);
 			path = Memory;
 			sourceTree = "<group>";

@@ -10,9 +10,10 @@ import UIKit
 
 class AddRemindViewController: UIViewController {
 
+    @IBOutlet weak var text: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        text.becomeFirstResponder()
         // Do any additional setup after loading the view.
     }
 
@@ -28,7 +29,6 @@ class AddRemindViewController: UIViewController {
     }
     
     @IBAction func hiddenKeyBoard(sender: AnyObject) {
-//        [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil]; 
         UIApplication.sharedApplication().sendAction(Selector("resignFirstResponder"), to: nil, from: nil, forEvent: nil)
     }
 
