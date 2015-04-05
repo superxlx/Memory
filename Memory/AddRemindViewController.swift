@@ -7,10 +7,12 @@
 //
 
 import UIKit
-
+import CoreData
 class AddRemindViewController: UIViewController {
 
     @IBOutlet weak var text: UITextField!
+    @IBOutlet weak var picker: UIDatePicker!
+    var delegate:RemindDelegate!
     override func viewDidLoad() {
         super.viewDidLoad()
         text.becomeFirstResponder()
@@ -21,7 +23,24 @@ class AddRemindViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func save(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        var context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+        var row:AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Remind", inManagedObjectContext: context!)
+        row.setValue(self.text.text, forKey: "content")
+        row.setValue(self.picker.date, forKey: "date")
+        context?.save(nil)
+        
+        var notification=UILocalNotification()
+        notification.fireDate=self.picker.date
+        notification.timeZone=NSTimeZone.defaultTimeZone()
+        notification.soundName=UILocalNotificationDefaultSoundName
+        notification.alertAction="打开"
+        notification.alertBody=self.text.text
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
+        self.dismissViewControllerAnimated(true, completion: {() in
+                self.delegate.remindreload()
+            })
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

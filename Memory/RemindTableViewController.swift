@@ -7,19 +7,29 @@
 //
 
 import UIKit
-
-class RemindTableViewController: UITableViewController {
-
+import CoreData
+class RemindTableViewController: UITableViewController,RemindDelegate{
+    @IBOutlet var tableview: UITableView!
+    var context:NSManagedObjectContext!
+    var contextdetial=[AnyObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName:UIColor.greenColor()]
         
+        
+        
+        
+        var entity=NSFetchRequest(entityName: "Remind")
+        self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+        self.contextdetial=context!.executeFetchRequest(entity, error: nil)!
+
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+         self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,29 +37,62 @@ class RemindTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func remindreload() {
+        var entity=NSFetchRequest(entityName: "Remind")
+        self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+        self.contextdetial=context!.executeFetchRequest(entity, error: nil)!
+        self.tableview.reloadData()
+
+        self.tableview.reloadData()
+    }
     // MARK: - Table view data source
 
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Potentially incomplete method implementation.
-//        // Return the number of sections.
-//        return 1
-//    }
-//
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete method implementation.
-//        // Return the number of rows in the section.
-//        return 10
-//    }
-//
-//    
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
-//
-//        // Configure the cell...
-//
-//        return cell
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 1
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return contextdetial.count
+    }
+
     
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+        let text=cell.viewWithTag(1) as UILabel
+        let date=cell.viewWithTag(2) as UILabel
+        
+        text.text=contextdetial[indexPath.row].valueForKey("content") as? String
+        
+        var time=contextdetial[indexPath.row].valueForKey("date") as? NSDate
+        var dateFormat=NSDateFormatter()
+        dateFormat.dateFormat="MM月dd日HH时mm分"
+        var dat=dateFormat.stringFromDate(time!)
+        date.text=dat
+
+
+        return cell
+    }
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    
+        
+        //从数据中删除
+        self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+        context.deleteObject(self.contextdetial[indexPath.row] as NSManagedObject)
+        context.save(nil)
+        var entity=NSFetchRequest(entityName: "Remind")
+        self.contextdetial=context.executeFetchRequest(entity, error: nil)!
+        //取消推送
+        let local=UIApplication.sharedApplication()
+        let cancelnotification=local.scheduledLocalNotifications[indexPath.row] as UILocalNotification
+        local.cancelLocalNotification(cancelnotification)
+        
+        
+        tableview.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Top)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,14 +129,15 @@ class RemindTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        let navigationController = segue.destinationViewController as UINavigationController
+        let controller = navigationController.topViewController as AddRemindViewController
+        controller.delegate=self
     }
-    */
+    
 
 }

@@ -17,6 +17,9 @@ class MemoTableViewController: UITableViewController,MemosureDelegate{
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName:UIColor.greenColor()]
+        
+        
+        
         var entity=NSFetchRequest(entityName: "Memo")
         self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
         self.contextdetial=context!.executeFetchRequest(entity, error: nil)!

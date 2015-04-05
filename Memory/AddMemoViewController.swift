@@ -20,6 +20,7 @@ class AddMemoViewController: UIViewController,UITextViewDelegate{
         super.viewDidLoad()
         self.text.becomeFirstResponder()
         self.text.delegate=self
+        
         var date=NSDate()
         var dateFormat=NSDateFormatter()
         dateFormat.dateFormat="YYYY年MM月dd日HH时mm分"
