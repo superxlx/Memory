@@ -36,7 +36,6 @@ class RemindTableViewController: UITableViewController,RemindDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     func remindreload() {
         var entity=NSFetchRequest(entityName: "Remind")
         self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
