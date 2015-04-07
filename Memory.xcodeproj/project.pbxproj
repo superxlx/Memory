@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A39F5071AD3D42300431052 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39F5061AD3D42300431052 /* MemoViewController.swift */; };
 		2A6EFB071ACA537B008091E5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6EFB061ACA537B008091E5 /* back.png */; };
 		2A8CD20E1ACD947B000D672F /* AddRemindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */; };
 		2A9114DD1AD3887E00EB250A /* Remind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9114DC1AD3887E00EB250A /* Remind.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A39F5061AD3D42300431052 /* MemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		2A6EFB061ACA537B008091E5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRemindViewController.swift; sourceTree = "<group>"; };
 		2A9114DC1AD3887E00EB250A /* Remind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remind.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */,
 				2AC4A06D1ACADBF800D73D82 /* Memory.xcdatamodeld */,
 				2A9114DC1AD3887E00EB250A /* Remind.swift */,
+				2A39F5061AD3D42300431052 /* MemoViewController.swift */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				2AF311221AC8391F00A6AADC /* TabBarViewController.swift in Sources */,
 				2AC4A06F1ACADBF800D73D82 /* Memory.xcdatamodeld in Sources */,
 				2AF311241AC83A2900A6AADC /* OverViewTableViewController.swift in Sources */,
+				2A39F5071AD3D42300431052 /* MemoViewController.swift in Sources */,
 				2AF311381AC85C8200A6AADC /* EssayTableViewController.swift in Sources */,
 				2ACBCB9D1AC99F8900832243 /* AddBillViewController.swift in Sources */,
 				2AF311321AC85C2700A6AADC /* BillTableViewController.swift in Sources */,

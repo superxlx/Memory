@@ -46,7 +46,7 @@ class AddMemoViewController: UIViewController,UITextViewDelegate{
         var userinfo:NSDictionary=(NSDictionary)(dictionary: paramNotification.userInfo!)
         var v:NSValue=userinfo.objectForKey(UIKeyboardFrameBeginUserInfoKey) as NSValue
         var keyboardRect=v.CGRectValue()
-        self.text.contentInset=UIEdgeInsetsMake(0, 0, keyboardRect.size.height+100, 0)
+        self.text.contentInset=UIEdgeInsetsMake(0, 0, keyboardRect.size.height, 0)
     }
     func handleKeyboardDidHidden(){
         self.text.contentInset=UIEdgeInsetsZero

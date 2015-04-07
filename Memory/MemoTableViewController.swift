@@ -68,11 +68,13 @@ class MemoTableViewController: UITableViewController,MemosureDelegate{
         return cell
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let navigationController = segue.destinationViewController as UINavigationController
-        let controller = navigationController.topViewController as AddMemoViewController
-        controller.Memodelegate = self
         if segue.identifier=="view" {
-            
+            let controller=segue.destinationViewController as MemoViewController
+            controller.hidesBottomBarWhenPushed=true
+        }else if segue.identifier=="add" {
+            let navigationController = segue.destinationViewController as UINavigationController
+            let controller = navigationController.topViewController as AddMemoViewController
+            controller.Memodelegate = self
         }
     }
 

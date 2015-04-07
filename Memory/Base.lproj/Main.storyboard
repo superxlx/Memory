@@ -41,7 +41,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="vqe-hX-qbt" kind="presentation" identifier="view" id="hkl-hn-CD8"/>
+                                    <segue destination="EdI-Ut-wc4" kind="show" identifier="view" id="3Vd-Z3-JDY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -54,7 +54,7 @@
                         <barButtonItem key="rightBarButtonItem" image="plus circle" id="lXd-y3-QGq">
                             <color key="tintColor" red="0.18255268860000001" green="0.99676804320000001" blue="0.51625173170000005" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="vqe-hX-qbt" kind="presentation" id="zuO-gD-PfQ"/>
+                                <segue destination="vqe-hX-qbt" kind="presentation" identifier="add" id="zuO-gD-PfQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -150,6 +150,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEQ-Tn-Tyq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2625" y="-426"/>
+        </scene>
+        <!--Memo View Controller-->
+        <scene sceneID="vjA-CY-mpQ">
+            <objects>
+                <viewController id="EdI-Ut-wc4" customClass="MemoViewController" customModule="Memory" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y3d-pp-Gqo"/>
+                        <viewControllerLayoutGuide type="bottom" id="u4E-qv-h5I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SHl-3Q-3W9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bp7-km-0s6">
+                                <rect key="frame" x="0.0" y="20" width="133" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="EdI-Ut-wc4" eventType="touchUpInside" id="p4a-cV-NQb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82612569820000004" green="1" blue="0.57216543060000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iWV-iX-QjZ"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oEs-le-9Pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3271" y="-429"/>
         </scene>
         <!--备忘-->
         <scene sceneID="dBT-0I-1IJ">
@@ -856,6 +889,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1v9-Fl-wzU"/>
-        <segue reference="hkl-hn-CD8"/>
     </inferredMetricsTieBreakers>
 </document>
