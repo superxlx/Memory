@@ -29,7 +29,6 @@ class AddRemindViewController: UIViewController {
     }
     @IBAction func save(sender: AnyObject) {
         var context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
-        context.
         var row:AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Remind", inManagedObjectContext: context!)
         row.setValue(self.text.text, forKey: "content")
         row.setValue(self.picker.date, forKey: "date")
@@ -40,7 +39,11 @@ class AddRemindViewController: UIViewController {
         notification.timeZone=NSTimeZone.defaultTimeZone()
         notification.soundName=UILocalNotificationDefaultSoundName
         notification.alertAction="打开"
-        notification.alertBody=self.text.text
+        if let a=self.text.text{
+            notification.alertBody=self.text.text
+        }else{
+            notification.alertBody="Memory 提醒"
+        }
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
         

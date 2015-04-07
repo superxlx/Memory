@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-class RemindTableViewController: UITableViewController,RemindDelegate{
+class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDelegate{
     @IBOutlet var tableview: UITableView!
     var context:NSManagedObjectContext!
     var contextdetial=[AnyObject]()
@@ -18,12 +18,13 @@ class RemindTableViewController: UITableViewController,RemindDelegate{
         self.navigationController?.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName:UIColor.greenColor()]
         
         
-        
-        
         var entity=NSFetchRequest(entityName: "Remind")
         self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
         self.contextdetial=context!.executeFetchRequest(entity, error: nil)!
-
+        
+        var appdelegate=UIApplication.sharedApplication().delegate as AppDelegate
+        appdelegate.isRemind=self
+  
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -64,7 +65,11 @@ class RemindTableViewController: UITableViewController,RemindDelegate{
         let text=cell.viewWithTag(1) as UILabel
         let date=cell.viewWithTag(2) as UILabel
         
-        text.text=contextdetial[indexPath.row].valueForKey("content") as? String
+        if let a=contextdetial[indexPath.row].valueForKey("content") as? String{
+            text.text=a
+        }else{
+            text.text="提醒"
+        }
         
         var time=contextdetial[indexPath.row].valueForKey("date") as? NSDate
         var dateFormat=NSDateFormatter()
@@ -72,11 +77,32 @@ class RemindTableViewController: UITableViewController,RemindDelegate{
         var dat=dateFormat.stringFromDate(time!)
         date.text=dat
 
+        
+        var datenow=NSDate()
+        var datepicker=contextdetial[indexPath.row].valueForKey("date") as NSDate
+        if datenow.earlierDate(datenow)==datepicker {
+            cell.selectionStyle=UITableViewCellSelectionStyle.None
+            cell.backgroundColor=UIColor.grayColor()
+            println("\(indexPath.row)\tisremind")
+        }else{
+            println("\(indexPath.row)\tremind")
+        }
 
         return cell
     }
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     
+        var datenow=NSDate()
+        var date=contextdetial[indexPath.row].valueForKey("date") as NSDate
+        if datenow.earlierDate(date)==date {
+            //从数据中删除
+            self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+            context.deleteObject(self.contextdetial[indexPath.row] as NSManagedObject)
+            context.save(nil)
+            var entity=NSFetchRequest(entityName: "Remind")
+            self.contextdetial=context.executeFetchRequest(entity, error: nil)!
+
+        }else{
         
         //从数据中删除
         self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
@@ -88,55 +114,23 @@ class RemindTableViewController: UITableViewController,RemindDelegate{
         let local=UIApplication.sharedApplication()
         let cancelnotification=local.scheduledLocalNotifications[indexPath.row] as UILocalNotification
         local.cancelLocalNotification(cancelnotification)
+        }
         
         
         tableview.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Top)
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableview.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+   
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let navigationController = segue.destinationViewController as UINavigationController
         let controller = navigationController.topViewController as AddRemindViewController
         controller.delegate=self
     }
-    
-
+    func isremindreload(){
+        println("remind have reload")
+        self.tableview.reloadData()
+    }
 }

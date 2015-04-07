@@ -4,3 +4,6 @@ protocol MemosureDelegate{
 protocol RemindDelegate{
     func remindreload()
 }
+protocol isRemindDelegate{
+    func isremindreload()
+}

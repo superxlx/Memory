@@ -6,7 +6,7 @@
         <attribute name="lock" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Remind" syncable="YES">
+    <entity name="Remind" representedClassName="Memory.Remind" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>

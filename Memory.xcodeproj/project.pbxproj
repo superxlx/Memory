@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A6EFB071ACA537B008091E5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6EFB061ACA537B008091E5 /* back.png */; };
 		2A8CD20E1ACD947B000D672F /* AddRemindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */; };
+		2A9114DD1AD3887E00EB250A /* Remind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9114DC1AD3887E00EB250A /* Remind.swift */; };
 		2AC4A06F1ACADBF800D73D82 /* Memory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4A06D1ACADBF800D73D82 /* Memory.xcdatamodeld */; };
 		2AC4A0711ACAEC3A00D73D82 /* protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4A0701ACAEC3A00D73D82 /* protocol.swift */; };
 		2ACBCB9D1AC99F8900832243 /* AddBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		2A6EFB061ACA537B008091E5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRemindViewController.swift; sourceTree = "<group>"; };
+		2A9114DC1AD3887E00EB250A /* Remind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remind.swift; sourceTree = "<group>"; };
 		2AC4A06E1ACADBF800D73D82 /* Memory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Memory.xcdatamodel; sourceTree = "<group>"; };
 		2AC4A0701ACAEC3A00D73D82 /* protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = protocol.swift; sourceTree = "<group>"; };
 		2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBillViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */,
 				2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */,
 				2AC4A06D1ACADBF800D73D82 /* Memory.xcdatamodeld */,
+				2A9114DC1AD3887E00EB250A /* Remind.swift */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				2AF311361AC85C6000A6AADC /* MemoTableViewController.swift in Sources */,
 				2AC4A0711ACAEC3A00D73D82 /* protocol.swift in Sources */,
 				2AF310E51AC80C6E00A6AADC /* AppDelegate.swift in Sources */,
+				2A9114DD1AD3887E00EB250A /* Remind.swift in Sources */,
 				2AF311341AC85C5300A6AADC /* RemindTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

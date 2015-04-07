@@ -10,10 +10,10 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
-
+    var isRemind:isRemindDelegate!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, categories: nil))
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var time=NSDate()
         println(time)
         println("I have receive information")
-        
+        isRemind.isremindreload()
     }
 
     func applicationWillResignActive(application: UIApplication) {
