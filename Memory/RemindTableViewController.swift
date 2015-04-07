@@ -86,6 +86,7 @@ class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDe
             println("\(indexPath.row)\tisremind")
         }else{
             println("\(indexPath.row)\tremind")
+            cell.backgroundColor=UIColor.whiteColor()
         }
         
         
@@ -105,17 +106,16 @@ class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDe
             self.contextdetial=context.executeFetchRequest(entity, error: nil)!
 
         }else{
-        
+        //取消推送
+        self.cancellocalnotification(indexPath.row)
         //从数据中删除
         self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
         context.deleteObject(self.contextdetial[indexPath.row] as NSManagedObject)
         context.save(nil)
+        //更新contentdetial数组
         var entity=NSFetchRequest(entityName: "Remind")
         self.contextdetial=context.executeFetchRequest(entity, error: nil)!
-        //取消推送
-        let local=UIApplication.sharedApplication()
-        let cancelnotification=local.scheduledLocalNotifications[indexPath.row] as UILocalNotification
-        local.cancelLocalNotification(cancelnotification)
+        
         }
         
         
@@ -135,4 +135,19 @@ class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDe
         println("remind have reload")
         self.tableview.reloadData()
     }
+    func cancellocalnotification(row:Int){
+        var mark = -1
+        var datenow=NSDate()
+        for var i=0;i<=row;i+=1{
+            var date=contextdetial[i].valueForKey("date") as NSDate
+            if datenow.earlierDate(date) == datenow {
+                mark++
+            }
+        }
+        let local=UIApplication.sharedApplication()
+        let cancelnotification=local.scheduledLocalNotifications[mark] as UILocalNotification
+        local.cancelLocalNotification(cancelnotification)
+        
+    }
+
 }
