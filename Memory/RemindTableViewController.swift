@@ -64,8 +64,8 @@ class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDe
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
         let text=cell.viewWithTag(1) as UILabel
         let date=cell.viewWithTag(2) as UILabel
-        
-        if let a=contextdetial[indexPath.row].valueForKey("content") as? String{
+        let a=contextdetial[indexPath.row].valueForKey("content") as? String
+        if a != ""{
             text.text=a
         }else{
             text.text="提醒"
@@ -80,14 +80,16 @@ class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDe
         
         var datenow=NSDate()
         var datepicker=contextdetial[indexPath.row].valueForKey("date") as NSDate
-        if datenow.earlierDate(datenow)==datepicker {
+        if datenow.earlierDate(datepicker)==datepicker {
             cell.selectionStyle=UITableViewCellSelectionStyle.None
             cell.backgroundColor=UIColor.grayColor()
             println("\(indexPath.row)\tisremind")
         }else{
             println("\(indexPath.row)\tremind")
         }
-
+        
+        
+        
         return cell
     }
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

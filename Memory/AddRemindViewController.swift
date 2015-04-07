@@ -39,7 +39,8 @@ class AddRemindViewController: UIViewController {
         notification.timeZone=NSTimeZone.defaultTimeZone()
         notification.soundName=UILocalNotificationDefaultSoundName
         notification.alertAction="打开"
-        if let a=self.text.text{
+        let a=self.text.text
+        if a != ""{
             notification.alertBody=self.text.text
         }else{
             notification.alertBody="Memory 提醒"
