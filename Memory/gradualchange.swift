@@ -55,6 +55,16 @@ func viewFlipFromLeft(view:UIView,animationTime:Float)
     UIView.commitAnimations()
 }
 
+func viewFlipFromRight(view:UIView,animationTime:Float)
+{
+    UIView.beginAnimations(nil, context: nil)
+    UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut)
+    UIView.setAnimationDuration(NSTimeInterval(animationTime))
+    UIView.setAnimationTransition(UIViewAnimationTransition.FlipFromRight, forView: view, cache: false)
+    
+    UIView.commitAnimations()
+}
+
 func viewMoveInFromTop(view:UIView,animationTime:Float)
 {
     var animation:CATransition = CATransition()

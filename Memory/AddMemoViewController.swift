@@ -68,12 +68,69 @@ class AddMemoViewController: UIViewController,UITextViewDelegate{
 //        self.dismissViewControllerAnimated(true, completion: {() in
 //            self.Memodelegate.memoreload()
 //        })
+        if self.leftButtonBottom.hidden{
         self.leftbarButton.image=UIImage(named: "Arrow Right in Circle")
         self.leftButtonBottom.hidden=false
         var button1=self.leftButtonBottom.viewWithTag(1) as UIButton
         button1.hidden=false
         viewFlipFromLeft(button1,1)
-    }
+        var minseconds=1*Double(NSEC_PER_SEC)
+        var dtime=dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
+        dispatch_after(dtime,dispatch_get_main_queue(),{
+        
+            var button2=self.leftButtonBottom.viewWithTag(2) as UIButton
+            button2.hidden=false
+            viewCurlDown(button2, 1)
+            var minseconds=1*Double(NSEC_PER_SEC)
+            var dtime=dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
+            dispatch_after(dtime,dispatch_get_main_queue(),{
+                
+                var button3=self.leftButtonBottom.viewWithTag(3) as UIButton
+                button3.hidden=false
+                viewCurlDown(button3, 1)
+                var minseconds=1*Double(NSEC_PER_SEC)
+                var dtime=dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
+                dispatch_after(dtime,dispatch_get_main_queue(),{
+                    
+                    var button4=self.leftButtonBottom.viewWithTag(4) as UIButton
+                    button4.hidden=false
+                    viewCurlDown(button4, 1)
+                })
+            })
+        })
+        insertBlurView(self.view, style: UIBlurEffectStyle.Light)
+        }else{
+            self.leftbarButton.image=UIImage(named: "Arrow Left in Circle")
+            self.leftButtonBottom.hidden=false
+            var button1=self.leftButtonBottom.viewWithTag(4) as UIButton
+            viewCurlUp(button1, 1)
+            var minseconds=1*Double(NSEC_PER_SEC)
+            var dtime=dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
+            dispatch_after(dtime,dispatch_get_main_queue(),{
+                button1.hidden=true
+                var button2=self.leftButtonBottom.viewWithTag(3) as UIButton
+                viewCurlUp(button2, 1)
+                var minseconds=1*Double(NSEC_PER_SEC)
+                var dtime=dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
+                dispatch_after(dtime,dispatch_get_main_queue(),{
+                    button2.hidden=true
+                    var button3=self.leftButtonBottom.viewWithTag(2) as UIButton
+                    viewCurlUp(button3, 1)
+                    var minseconds=1*Double(NSEC_PER_SEC)
+                    var dtime=dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
+                    dispatch_after(dtime,dispatch_get_main_queue(),{
+                        button3.hidden=true
+                        var button4=self.leftButtonBottom.viewWithTag(1) as UIButton
+                        viewFlipFromRight(button4,1)
+                        dispatch_after(dtime, dispatch_get_main_queue(), { () -> Void in
+                            button4.hidden=true
+                        })
+                    })
+                })
+            })
+
+        }
+        }
     @IBAction func lock(sender: AnyObject) {
         if islock {
             self.lockstate.setImage(UIImage(named: "unlocked"), forState: UIControlState.Normal)
@@ -87,7 +144,7 @@ class AddMemoViewController: UIViewController,UITextViewDelegate{
       
     }
     func insertBlurView (view: UIView,  style: UIBlurEffectStyle) {
-        view.backgroundColor = UIColor.clearColor()
+     //   view.backgroundColor = UIColor.clearColor()
         var blurEffect = UIBlurEffect(style: style)
         var blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
