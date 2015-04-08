@@ -11,6 +11,9 @@
 		2A6EFB071ACA537B008091E5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6EFB061ACA537B008091E5 /* back.png */; };
 		2A8CD20E1ACD947B000D672F /* AddRemindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */; };
 		2A9114DD1AD3887E00EB250A /* Remind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9114DC1AD3887E00EB250A /* Remind.swift */; };
+		2AA834A01AD57F5E00A94B13 /* gradualchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8349F1AD57F5E00A94B13 /* gradualchange.swift */; };
+		2AA834A61AD57F8C00A94B13 /* JNWSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA834A31AD57F8C00A94B13 /* JNWSpringAnimation.m */; };
+		2AA834A71AD57F8C00A94B13 /* NSValue+JNWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA834A51AD57F8C00A94B13 /* NSValue+JNWAdditions.m */; };
 		2AC4A06F1ACADBF800D73D82 /* Memory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4A06D1ACADBF800D73D82 /* Memory.xcdatamodeld */; };
 		2AC4A0711ACAEC3A00D73D82 /* protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4A0701ACAEC3A00D73D82 /* protocol.swift */; };
 		2ACBCB9D1AC99F8900832243 /* AddBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */; };
@@ -43,6 +46,12 @@
 		2A6EFB061ACA537B008091E5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRemindViewController.swift; sourceTree = "<group>"; };
 		2A9114DC1AD3887E00EB250A /* Remind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remind.swift; sourceTree = "<group>"; };
+		2AA8349F1AD57F5E00A94B13 /* gradualchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gradualchange.swift; sourceTree = "<group>"; };
+		2AA834A11AD57F8B00A94B13 /* Memory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Memory-Bridging-Header.h"; sourceTree = "<group>"; };
+		2AA834A21AD57F8C00A94B13 /* JNWSpringAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNWSpringAnimation.h; sourceTree = "<group>"; };
+		2AA834A31AD57F8C00A94B13 /* JNWSpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNWSpringAnimation.m; sourceTree = "<group>"; };
+		2AA834A41AD57F8C00A94B13 /* NSValue+JNWAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+JNWAdditions.h"; sourceTree = "<group>"; };
+		2AA834A51AD57F8C00A94B13 /* NSValue+JNWAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+JNWAdditions.m"; sourceTree = "<group>"; };
 		2AC4A06E1ACADBF800D73D82 /* Memory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Memory.xcdatamodel; sourceTree = "<group>"; };
 		2AC4A0701ACAEC3A00D73D82 /* protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = protocol.swift; sourceTree = "<group>"; };
 		2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBillViewController.swift; sourceTree = "<group>"; };
@@ -111,8 +120,13 @@
 		2AF310E11AC80C6E00A6AADC /* Memory */ = {
 			isa = PBXGroup;
 			children = (
+				2AA8349F1AD57F5E00A94B13 /* gradualchange.swift */,
 				2A6EFB051ACA536A008091E5 /* image */,
 				2AF310E41AC80C6E00A6AADC /* AppDelegate.swift */,
+				2AA834A21AD57F8C00A94B13 /* JNWSpringAnimation.h */,
+				2AA834A31AD57F8C00A94B13 /* JNWSpringAnimation.m */,
+				2AA834A41AD57F8C00A94B13 /* NSValue+JNWAdditions.h */,
+				2AA834A51AD57F8C00A94B13 /* NSValue+JNWAdditions.m */,
 				2AF310EB1AC80C6E00A6AADC /* Main.storyboard */,
 				2AF310EE1AC80C6E00A6AADC /* Images.xcassets */,
 				2AF310F01AC80C6E00A6AADC /* LaunchScreen.xib */,
@@ -130,6 +144,7 @@
 				2AC4A06D1ACADBF800D73D82 /* Memory.xcdatamodeld */,
 				2A9114DC1AD3887E00EB250A /* Remind.swift */,
 				2A39F5061AD3D42300431052 /* MemoViewController.swift */,
+				2AA834A11AD57F8B00A94B13 /* Memory-Bridging-Header.h */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -260,6 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA834A01AD57F5E00A94B13 /* gradualchange.swift in Sources */,
+				2AA834A61AD57F8C00A94B13 /* JNWSpringAnimation.m in Sources */,
 				2AF311281AC847C100A6AADC /* AddMemoViewController.swift in Sources */,
 				2AF311221AC8391F00A6AADC /* TabBarViewController.swift in Sources */,
 				2AC4A06F1ACADBF800D73D82 /* Memory.xcdatamodeld in Sources */,
@@ -270,6 +287,7 @@
 				2AF311321AC85C2700A6AADC /* BillTableViewController.swift in Sources */,
 				2A8CD20E1ACD947B000D672F /* AddRemindViewController.swift in Sources */,
 				2AF311361AC85C6000A6AADC /* MemoTableViewController.swift in Sources */,
+				2AA834A71AD57F8C00A94B13 /* NSValue+JNWAdditions.m in Sources */,
 				2AC4A0711ACAEC3A00D73D82 /* protocol.swift in Sources */,
 				2AF310E51AC80C6E00A6AADC /* AppDelegate.swift in Sources */,
 				2A9114DD1AD3887E00EB250A /* Remind.swift in Sources */,
@@ -398,9 +416,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Memory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -408,9 +429,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Memory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
 			};
 			name = Release;
 		};

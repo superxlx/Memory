@@ -109,6 +109,40 @@
                                 <color key="textColor" red="0.79598335600000003" green="0.79598335600000003" blue="0.79598335600000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfK-uM-GxF">
+                                <rect key="frame" x="0.0" y="64" width="74" height="261"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGu-1c-maH">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="66"/>
+                                        <color key="backgroundColor" red="0.82612569820000004" green="1" blue="0.57216543060000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyf-UY-bIJ">
+                                        <rect key="frame" x="0.0" y="65" width="74" height="66"/>
+                                        <color key="backgroundColor" red="1" green="0.56968116156272663" blue="0.33114737612299439" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oW8-zM-FLb">
+                                        <rect key="frame" x="0.0" y="130" width="74" height="66"/>
+                                        <color key="backgroundColor" red="0.80956651996445783" green="1" blue="0.93835299612288592" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgQ-dd-KWI">
+                                        <rect key="frame" x="0.0" y="195" width="74" height="66"/>
+                                        <color key="backgroundColor" red="1" green="0.77013206668363055" blue="0.85703818929822806" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97647064920000004" green="0.96862751250000001" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
@@ -127,7 +161,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="添加" id="V95-sB-Lht">
-                        <barButtonItem key="leftBarButtonItem" title="保存" id="gJM-V7-EJe">
+                        <barButtonItem key="leftBarButtonItem" image="Arrow Left in Circle" id="gJM-V7-EJe">
                             <color key="tintColor" red="0.18255268860000001" green="0.99676804320000001" blue="0.51625173170000005" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="save:" destination="s18-QJ-6Uf" id="Ism-Tb-uFE"/>
@@ -142,6 +176,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="Memotitle" destination="XRr-Qs-LxY" id="gii-Nl-PGT"/>
+                        <outlet property="leftButtonBottom" destination="cfK-uM-GxF" id="x3K-9V-SL4"/>
+                        <outlet property="leftbarButton" destination="gJM-V7-EJe" id="HRV-zd-FRW"/>
                         <outlet property="lockstate" destination="X7y-Vc-nBF" id="cmD-Mw-5vx"/>
                         <outlet property="text" destination="qud-sx-4yg" id="bOS-vd-xqA"/>
                         <outlet property="time" destination="5Fe-5b-46s" id="lob-L7-I1J"/>
@@ -163,17 +199,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bp7-km-0s6">
-                                <rect key="frame" x="0.0" y="20" width="133" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fp7-QC-kNE">
+                                <rect key="frame" x="16" y="20" width="65" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="7vd-8K-LRv"/>
+                                    <constraint firstAttribute="height" constant="19" id="UM3-AP-bBU"/>
+                                </constraints>
+                                <state key="normal" title="  返回" image="arrow left">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="back:" destination="EdI-Ut-wc4" eventType="touchUpInside" id="p4a-cV-NQb"/>
-                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8O-Kp-xc3">
+                                <rect key="frame" x="11" y="20" width="568" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="OCs-FO-ZD5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.82612569820000004" green="1" blue="0.57216543060000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="F8O-Kp-xc3" secondAttribute="trailing" constant="5" id="1RA-qE-SSh"/>
+                            <constraint firstItem="Fp7-QC-kNE" firstAttribute="leading" secondItem="SHl-3Q-3W9" secondAttribute="leadingMargin" id="EN0-ty-tHg"/>
+                            <constraint firstItem="Fp7-QC-kNE" firstAttribute="top" secondItem="Y3d-pp-Gqo" secondAttribute="bottom" constant="20" id="GiY-eE-Esq"/>
+                            <constraint firstItem="F8O-Kp-xc3" firstAttribute="leading" secondItem="SHl-3Q-3W9" secondAttribute="leadingMargin" constant="-5" id="NV4-ih-Lrb"/>
+                            <constraint firstItem="F8O-Kp-xc3" firstAttribute="top" secondItem="Y3d-pp-Gqo" secondAttribute="bottom" constant="20" id="Vpp-sL-RVu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iWV-iX-QjZ"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -877,8 +929,10 @@
     </scenes>
     <resources>
         <image name="Arrow Down in Circle" width="31" height="31"/>
+        <image name="Arrow Left in Circle" width="31" height="31"/>
         <image name="Calendar 4" width="30" height="30"/>
         <image name="alarm clock" width="28" height="28"/>
+        <image name="arrow left" width="14" height="28"/>
         <image name="back.png" width="400" height="400"/>
         <image name="chat 3" width="28" height="26"/>
         <image name="pencil" width="28" height="28"/>

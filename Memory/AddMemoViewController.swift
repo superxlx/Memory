@@ -14,6 +14,8 @@ class AddMemoViewController: UIViewController,UITextViewDelegate{
     @IBOutlet weak var lockstate: UIButton!
     @IBOutlet weak var text: UITextView!
     @IBOutlet weak var Memotitle: UITextField!
+    @IBOutlet weak var leftbarButton: UIBarButtonItem!
+    @IBOutlet weak var leftButtonBottom: UIView!
     var islock=false
     var Memodelegate:MemosureDelegate!
     override func viewDidLoad() {
@@ -55,17 +57,22 @@ class AddMemoViewController: UIViewController,UITextViewDelegate{
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func save(sender: AnyObject) {
-        var context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
-        var row:AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Memo", inManagedObjectContext: context!)
-        row.setValue(self.Memotitle.text, forKey: "title")
-        row.setValue(NSDate(), forKey: "date")
-        row.setValue(self.text.text, forKey: "content")
-        row.setValue(self.islock, forKey: "lock")
-        context?.save(nil)
-        
-        self.dismissViewControllerAnimated(true, completion: {() in
-            self.Memodelegate.memoreload()
-        })
+//        var context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+//        var row:AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Memo", inManagedObjectContext: context!)
+//        row.setValue(self.Memotitle.text, forKey: "title")
+//        row.setValue(NSDate(), forKey: "date")
+//        row.setValue(self.text.text, forKey: "content")
+//        row.setValue(self.islock, forKey: "lock")
+//        context?.save(nil)
+//        
+//        self.dismissViewControllerAnimated(true, completion: {() in
+//            self.Memodelegate.memoreload()
+//        })
+        self.leftbarButton.image=UIImage(named: "Arrow Right in Circle")
+        self.leftButtonBottom.hidden=false
+        var button1=self.leftButtonBottom.viewWithTag(1) as UIButton
+        button1.hidden=false
+        viewFlipFromLeft(button1,1)
     }
     @IBAction func lock(sender: AnyObject) {
         if islock {
@@ -78,6 +85,13 @@ class AddMemoViewController: UIViewController,UITextViewDelegate{
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
       
+    }
+    func insertBlurView (view: UIView,  style: UIBlurEffectStyle) {
+        view.backgroundColor = UIColor.clearColor()
+        var blurEffect = UIBlurEffect(style: style)
+        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        view.insertSubview(blurEffectView, atIndex: 0)
     }
     
 
