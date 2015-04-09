@@ -17,11 +17,13 @@ class AddMemoViewController: UIViewController,UITextViewDelegate{
     @IBOutlet weak var leftbarButton: UIBarButtonItem!
     @IBOutlet weak var leftButtonBottom: UIView!
     @IBOutlet weak var layview: UIView!
-    @IBOutlet weak var insert: UILabel!
-    @IBOutlet weak var save: UILabel!
+    @IBOutlet weak var insert: UIImageView!
+    @IBOutlet weak var save: UIImageView!
     var islock=false
     var Memodelegate:MemosureDelegate!
     var viewwidth:CGFloat!
+    var isfirst=true
+    var effect=true
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,50 +80,77 @@ class AddMemoViewController: UIViewController,UITextViewDelegate{
         var button1=self.leftButtonBottom.viewWithTag(1)! as UIButton
         var button2=self.leftButtonBottom.viewWithTag(2)! as UIView
         if self.leftButtonBottom.hidden{
+            if effect {
+            effect=false
             layview.hidden=false
             insert.hidden=false
-           
-            insertBlurView(layview, UIBlurEffectStyle.Dark)
+            layview.alpha=0.7
+            button2.center.y=70
+            insert.alpha=1
+            insertBlurView(layview, UIBlurEffectStyle.Light)
             self.leftbarButton.image=UIImage(named: "Arrow Right in Circle")
             self.leftButtonBottom.hidden=false
             
             button1.hidden=false
-            gradualchange_move(10, "x",-70, button1)
+            if self.isfirst{
+                self.isfirst=false
+                gradualchange_move(10, "x",-70, button1)
+            }else{
+            //    button1.center.x-=70
+                gradualchange_move(10, "x",-70, button1)
+                button1.transform=CGAffineTransformTranslate(view.transform, 0,0)
+            }
             gradualchange_move(10, "x", self.viewwidth, self.insert)
                 
             var minseconds=0.8*Double(NSEC_PER_SEC)
             var dtime=dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
             dispatch_after(dtime,dispatch_get_main_queue(),{
-        
                 
                 button2.hidden=false
                 self.save.hidden=false
                 gradualchange_rotation(20, 270, button2)
+                self.save.alpha=1
+                
                 gradualchange_move(10, "x", self.viewwidth, self.save)
+                var minseconds=1*Double(NSEC_PER_SEC)
+                var dtime=dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
+                dispatch_after(dtime,dispatch_get_main_queue(),{
+                    
+                    self.effect=true
+                    
+                })
                 
             })
-        }else{
+            }
+        }else {
+            if effect{
+            self.effect=false
             self.leftbarButton.image=UIImage(named: "Arrow Left in Circle")
             gradualchange_alpha(1, 0, save)
-            gradualchange_moveTo(10, "x", -70, button2)
+            gradualchange_rotation(20, -360, button2)
             var minseconds=0.8*Double(NSEC_PER_SEC)
             var dtime=dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
             dispatch_after(dtime,dispatch_get_main_queue(),{
-                button2.hidden=true
+                
                 gradualchange_alpha(1, 0, self.insert)
-                gradualchange_moveTo(10, "x", -70, button1)
+                gradualchange_moveTo(10, "x",-70, button1)
+                button2.center.y -= 70
+                gradualchange_moveTo(10, "x",-70, button2)
                 var minseconds=0.8*Double(NSEC_PER_SEC)
                 var dtime=dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
                 dispatch_after(dtime,dispatch_get_main_queue(),{
                     gradualchange_alpha(0.5, 0, self.layview)
+                    button1.hidden=true
+                    button2.hidden=true
                     var minseconds=0.5*Double(NSEC_PER_SEC)
                     var dtime=dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
                     dispatch_after(dtime,dispatch_get_main_queue(),{
                         self.leftButtonBottom.hidden=true
-                        
+                        self.effect=true
                     })
                 })
             })
+            }
         }
         }
     @IBAction func lock(sender: AnyObject) {

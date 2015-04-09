@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A39F5071AD3D42300431052 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39F5061AD3D42300431052 /* MemoViewController.swift */; };
+		2A51EE2F1AD6CD4600135F02 /* insert.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A51EE2E1AD6CD4600135F02 /* insert.png */; };
+		2A51EE311AD6CD4E00135F02 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A51EE301AD6CD4E00135F02 /* save.png */; };
 		2A6EFB071ACA537B008091E5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6EFB061ACA537B008091E5 /* back.png */; };
 		2A8CD20E1ACD947B000D672F /* AddRemindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */; };
 		2A9114DD1AD3887E00EB250A /* Remind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9114DC1AD3887E00EB250A /* Remind.swift */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		2A39F5061AD3D42300431052 /* MemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		2A51EE2E1AD6CD4600135F02 /* insert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = insert.png; sourceTree = "<group>"; };
+		2A51EE301AD6CD4E00135F02 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		2A6EFB061ACA537B008091E5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRemindViewController.swift; sourceTree = "<group>"; };
 		2A9114DC1AD3887E00EB250A /* Remind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remind.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 		2A6EFB051ACA536A008091E5 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				2A51EE301AD6CD4E00135F02 /* save.png */,
+				2A51EE2E1AD6CD4600135F02 /* insert.png */,
 				2A6EFB061ACA537B008091E5 /* back.png */,
 			);
 			name = image;
@@ -256,8 +262,10 @@
 			files = (
 				2A6EFB071ACA537B008091E5 /* back.png in Resources */,
 				2AF310ED1AC80C6E00A6AADC /* Main.storyboard in Resources */,
+				2A51EE311AD6CD4E00135F02 /* save.png in Resources */,
 				2AF310F21AC80C6E00A6AADC /* LaunchScreen.xib in Resources */,
 				2AF310EF1AC80C6E00A6AADC /* Images.xcassets in Resources */,
+				2A51EE2F1AD6CD4600135F02 /* insert.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
