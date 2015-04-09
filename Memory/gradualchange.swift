@@ -22,9 +22,33 @@ import UIKit
     rotation.fromValue=0
     rotation.toValue=(angle/180)*M_PI
     view.layer.addAnimation(rotation, forKey: rotation.keyPath)
-    view.transform=CGAffineTransformMakeRotation((CGFloat)(M_PI/2))
+    view.transform=CGAffineTransformMakeRotation((CGFloat)(M_PI/2*3))
     
    }
+func gradualchange_move(speed:CGFloat,direction:String,distance:CGFloat,view:UIView){
+    let mapTranslate=JNWSpringAnimation(keyPath: "transform.translation.\(direction)")
+    mapTranslate.damping=speed
+    mapTranslate.stiffness=0
+    mapTranslate.mass=1
+    mapTranslate.fromValue = distance
+    mapTranslate.toValue=0
+    view.layer.addAnimation(mapTranslate, forKey: mapTranslate.keyPath)
+    view.transform=CGAffineTransformTranslate(view.transform, 0,0)
+
+    
+}
+func gradualchange_moveTo(speed:CGFloat,direction:String,distance:CGFloat,view:UIView){
+    let mapTranslate=JNWSpringAnimation(keyPath: "transform.translation.\(direction)")
+    mapTranslate.damping=speed
+    mapTranslate.stiffness=0
+    mapTranslate.mass=1
+    mapTranslate.fromValue = 0
+    mapTranslate.toValue=distance
+    view.layer.addAnimation(mapTranslate, forKey: mapTranslate.keyPath)
+    view.transform=CGAffineTransformTranslate(view.transform, distance,0)
+    
+    
+}
 func viewCurlUp(view:UIView,animationTime:Float)
 {
     UIView.beginAnimations(nil, context: nil)
@@ -82,7 +106,7 @@ func animationRotationEffect(view:UIView,animationTime:Float)
     UIView.animateWithDuration(NSTimeInterval(animationTime), animations: { () -> Void in
         
         var animation:CABasicAnimation = CABasicAnimation(keyPath: "transform")
-        animation.toValue = NSValue(CATransform3D:CATransform3DMakeRotation(CGFloat(M_PI/2), 1, 0, 0))
+        animation.toValue = NSValue(CATransform3D:CATransform3DMakeRotation(CGFloat(M_PI/2), -1, 0, 0))
         
         animation.duration = CFTimeInterval(animationTime)
         animation.cumulative = true
@@ -105,5 +129,11 @@ func animationScaleEffect(view:UIView,animationTime:Float)
             })
     })
     
+}
+func insertBlurView (view: UIView,  style: UIBlurEffectStyle) {
+    var blurEffect = UIBlurEffect(style: style)
+    var blurEffectView = UIVisualEffectView(effect: blurEffect)
+    blurEffectView.frame = view.bounds
+    view.addSubview(blurEffectView)
 }
 
