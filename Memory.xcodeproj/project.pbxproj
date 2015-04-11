@@ -105,6 +105,52 @@
 			name = image;
 			sourceTree = "<group>";
 		};
+		2A9621331AD95B0D00B3BFF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2AF311211AC8391F00A6AADC /* TabBarViewController.swift */,
+				2AF311371AC85C8200A6AADC /* EssayTableViewController.swift */,
+				2AF311231AC83A2900A6AADC /* OverViewTableViewController.swift */,
+				2AF311351AC85C6000A6AADC /* MemoTableViewController.swift */,
+				2AF311311AC85C2700A6AADC /* BillTableViewController.swift */,
+				2AF311331AC85C5300A6AADC /* RemindTableViewController.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2A9621341AD95B1600B3BFF1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2A39F5061AD3D42300431052 /* MemoViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2A9621351AD95B1C00B3BFF1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2AF311271AC847C100A6AADC /* AddMemoViewController.swift */,
+				2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */,
+				2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2A9621361AD95B6100B3BFF1 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				2AA834A11AD57F8B00A94B13 /* Memory-Bridging-Header.h */,
+				2AA8349F1AD57F5E00A94B13 /* gradualchange.swift */,
+				2AC4A0701ACAEC3A00D73D82 /* protocol.swift */,
+				2A9114DC1AD3887E00EB250A /* Remind.swift */,
+				2AA834A21AD57F8C00A94B13 /* JNWSpringAnimation.h */,
+				2AA834A31AD57F8C00A94B13 /* JNWSpringAnimation.m */,
+				2AA834A41AD57F8C00A94B13 /* NSValue+JNWAdditions.h */,
+				2AA834A51AD57F8C00A94B13 /* NSValue+JNWAdditions.m */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
 		2AF310D61AC80C6E00A6AADC = {
 			isa = PBXGroup;
 			children = (
@@ -126,31 +172,17 @@
 		2AF310E11AC80C6E00A6AADC /* Memory */ = {
 			isa = PBXGroup;
 			children = (
-				2AA8349F1AD57F5E00A94B13 /* gradualchange.swift */,
+				2A9621361AD95B6100B3BFF1 /* Support */,
+				2A9621331AD95B0D00B3BFF1 /* Model */,
+				2A9621341AD95B1600B3BFF1 /* View */,
+				2A9621351AD95B1C00B3BFF1 /* Controller */,
 				2A6EFB051ACA536A008091E5 /* image */,
 				2AF310E41AC80C6E00A6AADC /* AppDelegate.swift */,
-				2AA834A21AD57F8C00A94B13 /* JNWSpringAnimation.h */,
-				2AA834A31AD57F8C00A94B13 /* JNWSpringAnimation.m */,
-				2AA834A41AD57F8C00A94B13 /* NSValue+JNWAdditions.h */,
-				2AA834A51AD57F8C00A94B13 /* NSValue+JNWAdditions.m */,
 				2AF310EB1AC80C6E00A6AADC /* Main.storyboard */,
 				2AF310EE1AC80C6E00A6AADC /* Images.xcassets */,
 				2AF310F01AC80C6E00A6AADC /* LaunchScreen.xib */,
 				2AF310E21AC80C6E00A6AADC /* Supporting Files */,
-				2AF311211AC8391F00A6AADC /* TabBarViewController.swift */,
-				2AC4A0701ACAEC3A00D73D82 /* protocol.swift */,
-				2AF311371AC85C8200A6AADC /* EssayTableViewController.swift */,
-				2AF311231AC83A2900A6AADC /* OverViewTableViewController.swift */,
-				2AF311351AC85C6000A6AADC /* MemoTableViewController.swift */,
-				2AF311271AC847C100A6AADC /* AddMemoViewController.swift */,
-				2AF311311AC85C2700A6AADC /* BillTableViewController.swift */,
-				2AF311331AC85C5300A6AADC /* RemindTableViewController.swift */,
-				2ACBCB9C1AC99F8900832243 /* AddBillViewController.swift */,
-				2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */,
 				2AC4A06D1ACADBF800D73D82 /* Memory.xcdatamodeld */,
-				2A9114DC1AD3887E00EB250A /* Remind.swift */,
-				2A39F5061AD3D42300431052 /* MemoViewController.swift */,
-				2AA834A11AD57F8B00A94B13 /* Memory-Bridging-Header.h */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
