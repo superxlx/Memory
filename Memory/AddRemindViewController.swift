@@ -19,8 +19,8 @@ class AddRemindViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func sortdate(a:AnyObject,b:AnyObject)->Bool{
-        let date1:NSDate=a.valueForKey("date") as NSDate
-        let date2:NSDate=b.valueForKey("date") as NSDate
+        let date1:NSDate=a.valueForKey("date") as! NSDate
+        let date2:NSDate=b.valueForKey("date") as! NSDate
         return date1.earlierDate(date2)==date1
         
     }
@@ -28,7 +28,7 @@ class AddRemindViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func save(sender: AnyObject) {
-        var context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+        var context=(UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         var row:AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Remind", inManagedObjectContext: context!)
         row.setValue(self.text.text, forKey: "content")
         row.setValue(self.picker.date, forKey: "date")

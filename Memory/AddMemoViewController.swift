@@ -55,7 +55,7 @@ class AddMemoViewController: UIViewController,UITextViewDelegate{
     }
     func handleKeyboardDidShow(paramNotification:NSNotification){
         var userinfo:NSDictionary=(NSDictionary)(dictionary: paramNotification.userInfo!)
-        var v:NSValue=userinfo.objectForKey(UIKeyboardFrameBeginUserInfoKey) as NSValue
+        var v:NSValue=userinfo.objectForKey(UIKeyboardFrameBeginUserInfoKey) as! NSValue
         var keyboardRect=v.CGRectValue()
         self.text.contentInset=UIEdgeInsetsMake(0, 0, keyboardRect.size.height, 0)
     }
@@ -77,8 +77,8 @@ class AddMemoViewController: UIViewController,UITextViewDelegate{
 //        self.dismissViewControllerAnimated(true, completion: {() in
 //            self.Memodelegate.memoreload()
 //        })
-        var button1=self.leftButtonBottom.viewWithTag(1)! as UIButton
-        var button2=self.leftButtonBottom.viewWithTag(2)! as UIView
+        var button1=self.leftButtonBottom.viewWithTag(1)! as! UIButton
+        var button2=self.leftButtonBottom.viewWithTag(2)! as! UIView
         if self.leftButtonBottom.hidden{
             if effect {
             effect=false

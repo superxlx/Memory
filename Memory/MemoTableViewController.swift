@@ -21,14 +21,14 @@ class MemoTableViewController: UITableViewController,MemosureDelegate{
         
         
         var entity=NSFetchRequest(entityName: "Memo")
-        self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+        self.context=(UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         self.contextdetial=context!.executeFetchRequest(entity, error: nil)!
         
          self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
     func memoreload(){
         var entity=NSFetchRequest(entityName: "Memo")
-        self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+        self.context=(UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         self.contextdetial=context!.executeFetchRequest(entity, error: nil)!
         self.tableview.reloadData()
     }
@@ -53,15 +53,15 @@ class MemoTableViewController: UITableViewController,MemosureDelegate{
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
-        let title=cell.viewWithTag(1) as UILabel
-        var titlecontent:String=contextdetial[indexPath.row].valueForKey("title") as  String
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        let title=cell.viewWithTag(1) as! UILabel
+        var titlecontent:String=contextdetial[indexPath.row].valueForKey("title") as!  String
         if titlecontent=="" {
             titlecontent="未命名"
         }
         title.text=titlecontent
-        let islock:Bool=contextdetial[indexPath.row].valueForKey("lock") as Bool
-        let lockimage=cell.viewWithTag(2) as UIImageView
+        let islock:Bool=contextdetial[indexPath.row].valueForKey("lock") as! Bool
+        let lockimage=cell.viewWithTag(2) as! UIImageView
         if islock {
             lockimage.image=UIImage(named: "locked")
         }
@@ -69,11 +69,11 @@ class MemoTableViewController: UITableViewController,MemosureDelegate{
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier=="view" {
-            let controller=segue.destinationViewController as MemoViewController
+            let controller=segue.destinationViewController as! MemoViewController
             controller.hidesBottomBarWhenPushed=true
         }else if segue.identifier=="add" {
-            let navigationController = segue.destinationViewController as UINavigationController
-            let controller = navigationController.topViewController as AddMemoViewController
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let controller = navigationController.topViewController as! AddMemoViewController
             controller.Memodelegate = self
         }
     }
@@ -83,8 +83,8 @@ class MemoTableViewController: UITableViewController,MemosureDelegate{
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
-        context.deleteObject(self.contextdetial[indexPath.row] as NSManagedObject)
+        self.context=(UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
+        context.deleteObject(self.contextdetial[indexPath.row] as! NSManagedObject)
         context.save(nil)
         var entity=NSFetchRequest(entityName: "Memo")
         self.contextdetial=context.executeFetchRequest(entity, error: nil)!

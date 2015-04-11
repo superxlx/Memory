@@ -37,7 +37,7 @@ class AddBillViewController: UIViewController,UITableViewDelegate{
     }
     func handleKeyboardDidShow(paramNotification:NSNotification){
         var userinfo:NSDictionary=(NSDictionary)(dictionary: paramNotification.userInfo!)
-        var v:NSValue=userinfo.objectForKey(UIKeyboardFrameBeginUserInfoKey) as NSValue
+        var v:NSValue=userinfo.objectForKey(UIKeyboardFrameBeginUserInfoKey) as! NSValue
         var keyboardRect=v.CGRectValue()
         self.tableview.contentInset=UIEdgeInsetsMake(0, 0, keyboardRect.size.height, 0)
     }
@@ -94,16 +94,16 @@ class AddBillViewController: UIViewController,UITableViewDelegate{
         
     
         if indexPath.row == self.billCount.count {
-            let cell = tableView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as! UITableViewCell
             return cell
         }else if indexPath.row == self.billCount.count-1 {
             if self.billCount[indexPath.row] {
-                let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+                let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
                 var label=cell.viewWithTag(1)
                 label?.becomeFirstResponder()
                 return cell
             }else{
-                let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as UITableViewCell
+                let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! UITableViewCell
                 var label=cell.viewWithTag(1)
                 label?.becomeFirstResponder()
                 return cell
@@ -113,10 +113,10 @@ class AddBillViewController: UIViewController,UITableViewDelegate{
             
         }else{
             if self.billCount[indexPath.row] {
-                let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+                let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
                 return cell
             }else{
-                let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as UITableViewCell
+                let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! UITableViewCell
                 return cell
             }
 

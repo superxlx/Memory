@@ -19,10 +19,10 @@ class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDe
         
         
         var entity=NSFetchRequest(entityName: "Remind")
-        self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+        self.context=(UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         self.contextdetial=context!.executeFetchRequest(entity, error: nil)!
         
-        var appdelegate=UIApplication.sharedApplication().delegate as AppDelegate
+        var appdelegate=UIApplication.sharedApplication().delegate as! AppDelegate
         appdelegate.isRemind=self
   
         
@@ -39,7 +39,7 @@ class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDe
     }
     func remindreload() {
         var entity=NSFetchRequest(entityName: "Remind")
-        self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+        self.context=(UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         self.contextdetial=context!.executeFetchRequest(entity, error: nil)!
         self.tableview.reloadData()
 
@@ -61,9 +61,9 @@ class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDe
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
-        let text=cell.viewWithTag(1) as UILabel
-        let date=cell.viewWithTag(2) as UILabel
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        let text=cell.viewWithTag(1) as! UILabel
+        let date=cell.viewWithTag(2) as! UILabel
         let a=contextdetial[indexPath.row].valueForKey("content") as? String
         if a != ""{
             text.text=a
@@ -79,7 +79,7 @@ class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDe
 
         
         var datenow=NSDate()
-        var datepicker=contextdetial[indexPath.row].valueForKey("date") as NSDate
+        var datepicker=contextdetial[indexPath.row].valueForKey("date") as! NSDate
         if datenow.earlierDate(datepicker)==datepicker {
             cell.selectionStyle=UITableViewCellSelectionStyle.None
             cell.backgroundColor=UIColor.grayColor()
@@ -96,11 +96,11 @@ class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDe
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     
         var datenow=NSDate()
-        var date=contextdetial[indexPath.row].valueForKey("date") as NSDate
+        var date=contextdetial[indexPath.row].valueForKey("date") as! NSDate
         if datenow.earlierDate(date)==date {
             //从数据中删除
-            self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
-            context.deleteObject(self.contextdetial[indexPath.row] as NSManagedObject)
+            self.context=(UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
+            context.deleteObject(self.contextdetial[indexPath.row] as! NSManagedObject)
             context.save(nil)
             var entity=NSFetchRequest(entityName: "Remind")
             self.contextdetial=context.executeFetchRequest(entity, error: nil)!
@@ -109,8 +109,8 @@ class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDe
         //取消推送
         self.cancellocalnotification(indexPath.row)
         //从数据中删除
-        self.context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
-        context.deleteObject(self.contextdetial[indexPath.row] as NSManagedObject)
+        self.context=(UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
+        context.deleteObject(self.contextdetial[indexPath.row] as! NSManagedObject)
         context.save(nil)
         //更新contentdetial数组
         var entity=NSFetchRequest(entityName: "Remind")
@@ -127,8 +127,8 @@ class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDe
     }
    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let navigationController = segue.destinationViewController as UINavigationController
-        let controller = navigationController.topViewController as AddRemindViewController
+        let navigationController = segue.destinationViewController as! UINavigationController
+        let controller = navigationController.topViewController as! AddRemindViewController
         controller.delegate=self
     }
     func isremindreload(){
@@ -139,13 +139,13 @@ class RemindTableViewController: UITableViewController,RemindDelegate,isRemindDe
         var mark = -1
         var datenow=NSDate()
         for var i=0;i<=row;i+=1{
-            var date=contextdetial[i].valueForKey("date") as NSDate
+            var date=contextdetial[i].valueForKey("date") as! NSDate
             if datenow.earlierDate(date) == datenow {
                 mark++
             }
         }
         let local=UIApplication.sharedApplication()
-        let cancelnotification=local.scheduledLocalNotifications[mark] as UILocalNotification
+        let cancelnotification=local.scheduledLocalNotifications[mark] as! UILocalNotification
         local.cancelLocalNotification(cancelnotification)
         
     }
