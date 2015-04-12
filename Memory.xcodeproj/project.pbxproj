@@ -11,6 +11,11 @@
 		2A51EE2F1AD6CD4600135F02 /* insert.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A51EE2E1AD6CD4600135F02 /* insert.png */; };
 		2A51EE311AD6CD4E00135F02 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A51EE301AD6CD4E00135F02 /* save.png */; };
 		2A6EFB071ACA537B008091E5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6EFB061ACA537B008091E5 /* back.png */; };
+		2A82B7551ADAAB2F00AE3946 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A82B7541ADAAB2F00AE3946 /* MobileCoreServices.framework */; };
+		2A82B7571ADAAC0700AE3946 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A82B7561ADAAC0700AE3946 /* CoreText.framework */; };
+		2A82B7591ADAAC0E00AE3946 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A82B7581ADAAC0E00AE3946 /* QuartzCore.framework */; };
+		2A82B75B1ADAACA000AE3946 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A82B75A1ADAACA000AE3946 /* ImageIO.framework */; };
+		2A82B75D1ADAACA900AE3946 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A82B75C1ADAACA900AE3946 /* libxml2.dylib */; };
 		2A8CD20E1ACD947B000D672F /* AddRemindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */; };
 		2A9114DD1AD3887E00EB250A /* Remind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9114DC1AD3887E00EB250A /* Remind.swift */; };
 		2AA834A01AD57F5E00A94B13 /* gradualchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8349F1AD57F5E00A94B13 /* gradualchange.swift */; };
@@ -34,6 +39,55 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2A82B7441ADAAA5300AE3946 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A82B7381ADAAA5200AE3946 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
+			remoteInfo = DemoApp;
+		};
+		2A82B7461ADAAA5300AE3946 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A82B7381ADAAA5200AE3946 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A70F119B14863198009202BF;
+			remoteInfo = "Static Framework";
+		};
+		2A82B7481ADAAA5300AE3946 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A82B7381ADAAA5200AE3946 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A70F11DE148632CD009202BF;
+			remoteInfo = "Static Library";
+		};
+		2A82B74A1ADAAA5300AE3946 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A82B7381ADAAA5200AE3946 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A788CA681486456100E1AFD9;
+			remoteInfo = UnitTest;
+		};
+		2A82B74C1ADAAA5300AE3946 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A82B7381ADAAA5200AE3946 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A78D9F781965B7DD00C80986;
+			remoteInfo = MacUnitTest;
+		};
+		2A82B74E1ADAAA5300AE3946 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A82B7381ADAAA5200AE3946 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A7F7EFCD1573603100F5A4D0;
+			remoteInfo = "Static Library (no DTFoundation)";
+		};
+		2A82B7501ADAAA5300AE3946 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A82B7381ADAAA5200AE3946 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E2262DC61638331500BFDAD7;
+			remoteInfo = "Mac Framework";
+		};
 		2AF310F81AC80C6E00A6AADC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2AF310D71AC80C6E00A6AADC /* Project object */;
@@ -48,6 +102,12 @@
 		2A51EE2E1AD6CD4600135F02 /* insert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = insert.png; sourceTree = "<group>"; };
 		2A51EE301AD6CD4E00135F02 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		2A6EFB061ACA537B008091E5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		2A82B7381ADAAA5200AE3946 /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = ../../../DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
+		2A82B7541ADAAB2F00AE3946 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		2A82B7561ADAAC0700AE3946 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		2A82B7581ADAAC0E00AE3946 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2A82B75A1ADAACA000AE3946 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		2A82B75C1ADAACA900AE3946 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRemindViewController.swift; sourceTree = "<group>"; };
 		2A9114DC1AD3887E00EB250A /* Remind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remind.swift; sourceTree = "<group>"; };
 		2AA8349F1AD57F5E00A94B13 /* gradualchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gradualchange.swift; sourceTree = "<group>"; };
@@ -82,6 +142,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A82B75D1ADAACA900AE3946 /* libxml2.dylib in Frameworks */,
+				2A82B75B1ADAACA000AE3946 /* ImageIO.framework in Frameworks */,
+				2A82B7591ADAAC0E00AE3946 /* QuartzCore.framework in Frameworks */,
+				2A82B7571ADAAC0700AE3946 /* CoreText.framework in Frameworks */,
+				2A82B7551ADAAB2F00AE3946 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +168,28 @@
 				2A6EFB061ACA537B008091E5 /* back.png */,
 			);
 			name = image;
+			sourceTree = "<group>";
+		};
+		2A82B7371ADAA98A00AE3946 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				2A82B7381ADAAA5200AE3946 /* DTCoreText.xcodeproj */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		2A82B7391ADAAA5200AE3946 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A82B7451ADAAA5300AE3946 /* RTDemoApp.app */,
+				2A82B7471ADAAA5300AE3946 /* DTCoreText.framework */,
+				2A82B7491ADAAA5300AE3946 /* libDTCoreText.a */,
+				2A82B74B1ADAAA5300AE3946 /* UnitTest.xctest */,
+				2A82B74D1ADAAA5300AE3946 /* MacUnitTest.xctest */,
+				2A82B74F1ADAAA5300AE3946 /* libDTCoreText_no_DTFoundation.a */,
+				2A82B7511ADAAA5300AE3946 /* DTCoreText.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		2A9621331AD95B0D00B3BFF1 /* Model */ = {
@@ -136,7 +223,7 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		2A9621361AD95B6100B3BFF1 /* Support */ = {
+		2A9621361AD95B6100B3BFF1 /* External */ = {
 			isa = PBXGroup;
 			children = (
 				2AA834A11AD57F8B00A94B13 /* Memory-Bridging-Header.h */,
@@ -148,12 +235,18 @@
 				2AA834A41AD57F8C00A94B13 /* NSValue+JNWAdditions.h */,
 				2AA834A51AD57F8C00A94B13 /* NSValue+JNWAdditions.m */,
 			);
-			name = Support;
+			name = External;
 			sourceTree = "<group>";
 		};
 		2AF310D61AC80C6E00A6AADC = {
 			isa = PBXGroup;
 			children = (
+				2A82B75C1ADAACA900AE3946 /* libxml2.dylib */,
+				2A82B75A1ADAACA000AE3946 /* ImageIO.framework */,
+				2A82B7581ADAAC0E00AE3946 /* QuartzCore.framework */,
+				2A82B7561ADAAC0700AE3946 /* CoreText.framework */,
+				2A82B7541ADAAB2F00AE3946 /* MobileCoreServices.framework */,
+				2A82B7371ADAA98A00AE3946 /* External */,
 				2AF310E11AC80C6E00A6AADC /* Memory */,
 				2AF310FA1AC80C6E00A6AADC /* MemoryTests */,
 				2AF310E01AC80C6E00A6AADC /* Products */,
@@ -172,7 +265,7 @@
 		2AF310E11AC80C6E00A6AADC /* Memory */ = {
 			isa = PBXGroup;
 			children = (
-				2A9621361AD95B6100B3BFF1 /* Support */,
+				2A9621361AD95B6100B3BFF1 /* External */,
 				2A9621331AD95B0D00B3BFF1 /* Model */,
 				2A9621341AD95B1600B3BFF1 /* View */,
 				2A9621351AD95B1C00B3BFF1 /* Controller */,
@@ -279,6 +372,12 @@
 			mainGroup = 2AF310D61AC80C6E00A6AADC;
 			productRefGroup = 2AF310E01AC80C6E00A6AADC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2A82B7391ADAAA5200AE3946 /* Products */;
+					ProjectRef = 2A82B7381ADAAA5200AE3946 /* DTCoreText.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2AF310DE1AC80C6E00A6AADC /* Memory */,
@@ -286,6 +385,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2A82B7451ADAAA5300AE3946 /* RTDemoApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = RTDemoApp.app;
+			remoteRef = 2A82B7441ADAAA5300AE3946 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A82B7471ADAAA5300AE3946 /* DTCoreText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DTCoreText.framework;
+			remoteRef = 2A82B7461ADAAA5300AE3946 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A82B7491ADAAA5300AE3946 /* libDTCoreText.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDTCoreText.a;
+			remoteRef = 2A82B7481ADAAA5300AE3946 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A82B74B1ADAAA5300AE3946 /* UnitTest.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTest.xctest;
+			remoteRef = 2A82B74A1ADAAA5300AE3946 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A82B74D1ADAAA5300AE3946 /* MacUnitTest.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MacUnitTest.xctest;
+			remoteRef = 2A82B74C1ADAAA5300AE3946 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A82B74F1ADAAA5300AE3946 /* libDTCoreText_no_DTFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDTCoreText_no_DTFoundation.a;
+			remoteRef = 2A82B74E1ADAAA5300AE3946 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A82B7511ADAAA5300AE3946 /* DTCoreText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DTCoreText.framework;
+			remoteRef = 2A82B7501ADAAA5300AE3946 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2AF310DD1AC80C6E00A6AADC /* Resources */ = {
@@ -457,11 +608,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/xlx/DTCoreText/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source,
+				);
 				INFOPLIST_FILE = Memory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "/Users/xlx/DTCoreText/Core/Source /Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source /Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source/DTHTMLParser";
 			};
 			name = Debug;
 		};
@@ -470,10 +627,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/xlx/DTCoreText/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source,
+				);
 				INFOPLIST_FILE = Memory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "/Users/xlx/DTCoreText/Core/Source /Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source /Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source/DTHTMLParser";
 			};
 			name = Release;
 		};
