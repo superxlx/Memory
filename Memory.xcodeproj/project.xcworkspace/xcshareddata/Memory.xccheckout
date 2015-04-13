@@ -10,15 +10,23 @@
 	<string>Memory</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>2CC69C7EFC439AC727F09E33B49EFBD1D2365CBA</key>
+		<string>https://github.com/Cocoanetics/DTCoreText.git</string>
 		<key>86284B2AC70FAF3355F0DBA5632D896A50A00509</key>
 		<string>https://github.com/superxlx/Memory.git</string>
+		<key>F501F6253A6AEB746530F92C6B0EA8E3AD06410B</key>
+		<string>https://github.com/Cocoanetics/DTFoundation.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Memory.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>2CC69C7EFC439AC727F09E33B49EFBD1D2365CBA</key>
+		<string>../../../DTCoreText</string>
 		<key>86284B2AC70FAF3355F0DBA5632D896A50A00509</key>
 		<string>../..</string>
+		<key>F501F6253A6AEB746530F92C6B0EA8E3AD06410B</key>
+		<string>../../../../../Externals/DTCoreText/Externals/DTFoundation</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/superxlx/Memory.git</string>
@@ -28,6 +36,22 @@
 	<string>86284B2AC70FAF3355F0DBA5632D896A50A00509</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2CC69C7EFC439AC727F09E33B49EFBD1D2365CBA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DTCoreText</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F501F6253A6AEB746530F92C6B0EA8E3AD06410B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DTFoundation</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

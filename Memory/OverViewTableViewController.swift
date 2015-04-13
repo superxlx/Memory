@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OverViewTableViewController: UIViewController,UITableViewDelegate{
+class OverViewTableViewController: UIViewController {
 
     @IBOutlet weak var addback: UIView!
     override func viewDidLoad() {

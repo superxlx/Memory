@@ -11,6 +11,11 @@
 		2A51EE2F1AD6CD4600135F02 /* insert.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A51EE2E1AD6CD4600135F02 /* insert.png */; };
 		2A51EE311AD6CD4E00135F02 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A51EE301AD6CD4E00135F02 /* save.png */; };
 		2A6EFB071ACA537B008091E5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6EFB061ACA537B008091E5 /* back.png */; };
+		2A82B7551ADAAB2F00AE3946 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A82B7541ADAAB2F00AE3946 /* MobileCoreServices.framework */; };
+		2A82B7571ADAAC0700AE3946 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A82B7561ADAAC0700AE3946 /* CoreText.framework */; };
+		2A82B7591ADAAC0E00AE3946 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A82B7581ADAAC0E00AE3946 /* QuartzCore.framework */; };
+		2A82B75B1ADAACA000AE3946 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A82B75A1ADAACA000AE3946 /* ImageIO.framework */; };
+		2A82B75D1ADAACA900AE3946 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A82B75C1ADAACA900AE3946 /* libxml2.dylib */; };
 		2A8CD20E1ACD947B000D672F /* AddRemindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */; };
 		2A9114DD1AD3887E00EB250A /* Remind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9114DC1AD3887E00EB250A /* Remind.swift */; };
 		2AA834A01AD57F5E00A94B13 /* gradualchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8349F1AD57F5E00A94B13 /* gradualchange.swift */; };
@@ -48,6 +53,11 @@
 		2A51EE2E1AD6CD4600135F02 /* insert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = insert.png; sourceTree = "<group>"; };
 		2A51EE301AD6CD4E00135F02 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		2A6EFB061ACA537B008091E5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		2A82B7541ADAAB2F00AE3946 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		2A82B7561ADAAC0700AE3946 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		2A82B7581ADAAC0E00AE3946 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2A82B75A1ADAACA000AE3946 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		2A82B75C1ADAACA900AE3946 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		2A8CD20D1ACD947B000D672F /* AddRemindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRemindViewController.swift; sourceTree = "<group>"; };
 		2A9114DC1AD3887E00EB250A /* Remind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remind.swift; sourceTree = "<group>"; };
 		2AA8349F1AD57F5E00A94B13 /* gradualchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gradualchange.swift; sourceTree = "<group>"; };
@@ -82,6 +92,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A82B75D1ADAACA900AE3946 /* libxml2.dylib in Frameworks */,
+				2A82B75B1ADAACA000AE3946 /* ImageIO.framework in Frameworks */,
+				2A82B7591ADAAC0E00AE3946 /* QuartzCore.framework in Frameworks */,
+				2A82B7571ADAAC0700AE3946 /* CoreText.framework in Frameworks */,
+				2A82B7551ADAAB2F00AE3946 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,14 +120,21 @@
 			name = image;
 			sourceTree = "<group>";
 		};
+		2A82B7371ADAA98A00AE3946 /* External */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
 		2A9621331AD95B0D00B3BFF1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				2AF311211AC8391F00A6AADC /* TabBarViewController.swift */,
-				2AF311371AC85C8200A6AADC /* EssayTableViewController.swift */,
 				2AF311231AC83A2900A6AADC /* OverViewTableViewController.swift */,
 				2AF311351AC85C6000A6AADC /* MemoTableViewController.swift */,
 				2AF311311AC85C2700A6AADC /* BillTableViewController.swift */,
+				2AF311371AC85C8200A6AADC /* EssayTableViewController.swift */,
 				2AF311331AC85C5300A6AADC /* RemindTableViewController.swift */,
 			);
 			name = Model;
@@ -136,24 +158,30 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		2A9621361AD95B6100B3BFF1 /* Support */ = {
+		2A9621361AD95B6100B3BFF1 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				2AA834A11AD57F8B00A94B13 /* Memory-Bridging-Header.h */,
+				2A9114DC1AD3887E00EB250A /* Remind.swift */,
 				2AA8349F1AD57F5E00A94B13 /* gradualchange.swift */,
 				2AC4A0701ACAEC3A00D73D82 /* protocol.swift */,
-				2A9114DC1AD3887E00EB250A /* Remind.swift */,
 				2AA834A21AD57F8C00A94B13 /* JNWSpringAnimation.h */,
 				2AA834A31AD57F8C00A94B13 /* JNWSpringAnimation.m */,
 				2AA834A41AD57F8C00A94B13 /* NSValue+JNWAdditions.h */,
 				2AA834A51AD57F8C00A94B13 /* NSValue+JNWAdditions.m */,
+				2AA834A11AD57F8B00A94B13 /* Memory-Bridging-Header.h */,
 			);
-			name = Support;
+			name = External;
 			sourceTree = "<group>";
 		};
 		2AF310D61AC80C6E00A6AADC = {
 			isa = PBXGroup;
 			children = (
+				2A82B75C1ADAACA900AE3946 /* libxml2.dylib */,
+				2A82B75A1ADAACA000AE3946 /* ImageIO.framework */,
+				2A82B7581ADAAC0E00AE3946 /* QuartzCore.framework */,
+				2A82B7561ADAAC0700AE3946 /* CoreText.framework */,
+				2A82B7541ADAAB2F00AE3946 /* MobileCoreServices.framework */,
+				2A82B7371ADAA98A00AE3946 /* External */,
 				2AF310E11AC80C6E00A6AADC /* Memory */,
 				2AF310FA1AC80C6E00A6AADC /* MemoryTests */,
 				2AF310E01AC80C6E00A6AADC /* Products */,
@@ -172,7 +200,7 @@
 		2AF310E11AC80C6E00A6AADC /* Memory */ = {
 			isa = PBXGroup;
 			children = (
-				2A9621361AD95B6100B3BFF1 /* Support */,
+				2A9621361AD95B6100B3BFF1 /* External */,
 				2A9621331AD95B0D00B3BFF1 /* Model */,
 				2A9621341AD95B1600B3BFF1 /* View */,
 				2A9621351AD95B1C00B3BFF1 /* Controller */,
@@ -455,25 +483,49 @@
 		2AF311021AC80C6E00A6AADC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/xlx/DTCoreText/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source,
+				);
 				INFOPLIST_FILE = Memory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					/Users/xlx/DTCoreText/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source/DTHTMLParser,
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "/Users/xlx/DTCoreText/Core/Source /Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source /Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source/DTHTMLParser";
 			};
 			name = Debug;
 		};
 		2AF311031AC80C6E00A6AADC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/xlx/DTCoreText/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source,
+				);
 				INFOPLIST_FILE = Memory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					/Users/xlx/DTCoreText/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source/DTHTMLParser,
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "/Users/xlx/DTCoreText/Core/Source /Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source /Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source/DTHTMLParser";
 			};
 			name = Release;
 		};

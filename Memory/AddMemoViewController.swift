@@ -66,14 +66,14 @@ class AddMemoViewController: UIViewController,UITextViewDelegate{
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func save(sender: AnyObject) {
-//        var context=(UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+//        var context=(UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 //        var row:AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Memo", inManagedObjectContext: context!)
 //        row.setValue(self.Memotitle.text, forKey: "title")
 //        row.setValue(NSDate(), forKey: "date")
 //        row.setValue(self.text.text, forKey: "content")
 //        row.setValue(self.islock, forKey: "lock")
 //        context?.save(nil)
-//        
+        
 //        self.dismissViewControllerAnimated(true, completion: {() in
 //            self.Memodelegate.memoreload()
 //        })
