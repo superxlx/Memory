@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A1306001ADBCA66007D279C /* DTCoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A82B7511ADAAA5300AE3946 /* DTCoreText.framework */; };
 		2A39F5071AD3D42300431052 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39F5061AD3D42300431052 /* MemoViewController.swift */; };
 		2A51EE2F1AD6CD4600135F02 /* insert.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A51EE2E1AD6CD4600135F02 /* insert.png */; };
 		2A51EE311AD6CD4E00135F02 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A51EE301AD6CD4E00135F02 /* save.png */; };
@@ -39,6 +40,55 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2A13062B1ADBFC78007D279C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A13061F1ADBFC78007D279C /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
+			remoteInfo = DemoApp;
+		};
+		2A13062D1ADBFC78007D279C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A13061F1ADBFC78007D279C /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A70F119B14863198009202BF;
+			remoteInfo = "Static Framework";
+		};
+		2A13062F1ADBFC78007D279C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A13061F1ADBFC78007D279C /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A70F11DE148632CD009202BF;
+			remoteInfo = "Static Library";
+		};
+		2A1306311ADBFC78007D279C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A13061F1ADBFC78007D279C /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A788CA681486456100E1AFD9;
+			remoteInfo = UnitTest;
+		};
+		2A1306331ADBFC78007D279C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A13061F1ADBFC78007D279C /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A78D9F781965B7DD00C80986;
+			remoteInfo = MacUnitTest;
+		};
+		2A1306351ADBFC78007D279C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A13061F1ADBFC78007D279C /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A7F7EFCD1573603100F5A4D0;
+			remoteInfo = "Static Library (no DTFoundation)";
+		};
+		2A1306371ADBFC78007D279C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A13061F1ADBFC78007D279C /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E2262DC61638331500BFDAD7;
+			remoteInfo = "Mac Framework";
+		};
 		2A82B7441ADAAA5300AE3946 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A82B7381ADAAA5200AE3946 /* DTCoreText.xcodeproj */;
@@ -98,6 +148,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A13061F1ADBFC78007D279C /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = ../../../Externals/DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
 		2A39F5061AD3D42300431052 /* MemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		2A51EE2E1AD6CD4600135F02 /* insert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = insert.png; sourceTree = "<group>"; };
 		2A51EE301AD6CD4E00135F02 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
@@ -142,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1306001ADBCA66007D279C /* DTCoreText.framework in Frameworks */,
 				2A82B75D1ADAACA900AE3946 /* libxml2.dylib in Frameworks */,
 				2A82B75B1ADAACA000AE3946 /* ImageIO.framework in Frameworks */,
 				2A82B7591ADAAC0E00AE3946 /* QuartzCore.framework in Frameworks */,
@@ -160,6 +212,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A1306201ADBFC78007D279C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A13062C1ADBFC78007D279C /* RTDemoApp.app */,
+				2A13062E1ADBFC78007D279C /* DTCoreText.framework */,
+				2A1306301ADBFC78007D279C /* libDTCoreText.a */,
+				2A1306321ADBFC78007D279C /* UnitTest.xctest */,
+				2A1306341ADBFC78007D279C /* MacUnitTest.xctest */,
+				2A1306361ADBFC78007D279C /* libDTCoreText_no_DTFoundation.a */,
+				2A1306381ADBFC78007D279C /* DTCoreText.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2A6EFB051ACA536A008091E5 /* image */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +239,7 @@
 		2A82B7371ADAA98A00AE3946 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				2A13061F1ADBFC78007D279C /* DTCoreText.xcodeproj */,
 				2A82B7381ADAAA5200AE3946 /* DTCoreText.xcodeproj */,
 			);
 			name = External;
@@ -374,6 +441,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 2A1306201ADBFC78007D279C /* Products */;
+					ProjectRef = 2A13061F1ADBFC78007D279C /* DTCoreText.xcodeproj */;
+				},
+				{
 					ProductGroup = 2A82B7391ADAAA5200AE3946 /* Products */;
 					ProjectRef = 2A82B7381ADAAA5200AE3946 /* DTCoreText.xcodeproj */;
 				},
@@ -387,6 +458,55 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		2A13062C1ADBFC78007D279C /* RTDemoApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = RTDemoApp.app;
+			remoteRef = 2A13062B1ADBFC78007D279C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A13062E1ADBFC78007D279C /* DTCoreText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DTCoreText.framework;
+			remoteRef = 2A13062D1ADBFC78007D279C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A1306301ADBFC78007D279C /* libDTCoreText.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDTCoreText.a;
+			remoteRef = 2A13062F1ADBFC78007D279C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A1306321ADBFC78007D279C /* UnitTest.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTest.xctest;
+			remoteRef = 2A1306311ADBFC78007D279C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A1306341ADBFC78007D279C /* MacUnitTest.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MacUnitTest.xctest;
+			remoteRef = 2A1306331ADBFC78007D279C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A1306361ADBFC78007D279C /* libDTCoreText_no_DTFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDTCoreText_no_DTFoundation.a;
+			remoteRef = 2A1306351ADBFC78007D279C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2A1306381ADBFC78007D279C /* DTCoreText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DTCoreText.framework;
+			remoteRef = 2A1306371ADBFC78007D279C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		2A82B7451ADAAA5300AE3946 /* RTDemoApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
@@ -606,6 +726,7 @@
 		2AF311021AC80C6E00A6AADC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -614,6 +735,11 @@
 				);
 				INFOPLIST_FILE = Memory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					/Users/xlx/DTCoreText/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source/DTHTMLParser,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
@@ -625,6 +751,7 @@
 		2AF311031AC80C6E00A6AADC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -633,6 +760,11 @@
 				);
 				INFOPLIST_FILE = Memory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					/Users/xlx/DTCoreText/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source/DTHTMLParser,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
