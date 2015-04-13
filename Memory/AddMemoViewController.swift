@@ -77,6 +77,11 @@ class AddMemoViewController: UIViewController,UITextViewDelegate{
 //        self.dismissViewControllerAnimated(true, completion: {() in
 //            self.Memodelegate.memoreload()
 //        })
+
+//        self.dismissViewControllerAnimated(true, completion: {() in
+//            self.Memodelegate.memoreload()
+//        })
+
         var button1=self.leftButtonBottom.viewWithTag(1)! as! UIButton
         var button2=self.leftButtonBottom.viewWithTag(2)! as! UIView
         if self.leftButtonBottom.hidden{
