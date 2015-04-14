@@ -46,6 +46,55 @@
 			remoteGlobalIDString = 2AF310DE1AC80C6E00A6AADC;
 			remoteInfo = Memory;
 		};
+		2AF371111ADC07B700C9733F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF371051ADC07B700C9733F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
+			remoteInfo = DemoApp;
+		};
+		2AF371131ADC07B700C9733F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF371051ADC07B700C9733F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A70F119B14863198009202BF;
+			remoteInfo = "Static Framework";
+		};
+		2AF371151ADC07B700C9733F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF371051ADC07B700C9733F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A70F11DE148632CD009202BF;
+			remoteInfo = "Static Library";
+		};
+		2AF371171ADC07B700C9733F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF371051ADC07B700C9733F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A788CA681486456100E1AFD9;
+			remoteInfo = UnitTest;
+		};
+		2AF371191ADC07B700C9733F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF371051ADC07B700C9733F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A78D9F781965B7DD00C80986;
+			remoteInfo = MacUnitTest;
+		};
+		2AF3711B1ADC07B700C9733F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF371051ADC07B700C9733F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A7F7EFCD1573603100F5A4D0;
+			remoteInfo = "Static Library (no DTFoundation)";
+		};
+		2AF3711D1ADC07B700C9733F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF371051ADC07B700C9733F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E2262DC61638331500BFDAD7;
+			remoteInfo = "Mac Framework";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +134,7 @@
 		2AF311331AC85C5300A6AADC /* RemindTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindTableViewController.swift; sourceTree = "<group>"; };
 		2AF311351AC85C6000A6AADC /* MemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoTableViewController.swift; sourceTree = "<group>"; };
 		2AF311371AC85C8200A6AADC /* EssayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EssayTableViewController.swift; sourceTree = "<group>"; };
+		2AF371051ADC07B700C9733F /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = ../../../Externals/DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +173,7 @@
 		2A82B7371ADAA98A00AE3946 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				2AF371051ADC07B700C9733F /* DTCoreText.xcodeproj */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -240,6 +291,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2AF371061ADC07B700C9733F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AF371121ADC07B700C9733F /* RTDemoApp.app */,
+				2AF371141ADC07B700C9733F /* DTCoreText.framework */,
+				2AF371161ADC07B700C9733F /* libDTCoreText.a */,
+				2AF371181ADC07B700C9733F /* UnitTest.xctest */,
+				2AF3711A1ADC07B700C9733F /* MacUnitTest.xctest */,
+				2AF3711C1ADC07B700C9733F /* libDTCoreText_no_DTFoundation.a */,
+				2AF3711E1ADC07B700C9733F /* DTCoreText.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,6 +372,12 @@
 			mainGroup = 2AF310D61AC80C6E00A6AADC;
 			productRefGroup = 2AF310E01AC80C6E00A6AADC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2AF371061ADC07B700C9733F /* Products */;
+					ProjectRef = 2AF371051ADC07B700C9733F /* DTCoreText.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2AF310DE1AC80C6E00A6AADC /* Memory */,
@@ -314,6 +385,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2AF371121ADC07B700C9733F /* RTDemoApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = RTDemoApp.app;
+			remoteRef = 2AF371111ADC07B700C9733F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2AF371141ADC07B700C9733F /* DTCoreText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DTCoreText.framework;
+			remoteRef = 2AF371131ADC07B700C9733F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2AF371161ADC07B700C9733F /* libDTCoreText.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDTCoreText.a;
+			remoteRef = 2AF371151ADC07B700C9733F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2AF371181ADC07B700C9733F /* UnitTest.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTest.xctest;
+			remoteRef = 2AF371171ADC07B700C9733F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2AF3711A1ADC07B700C9733F /* MacUnitTest.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MacUnitTest.xctest;
+			remoteRef = 2AF371191ADC07B700C9733F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2AF3711C1ADC07B700C9733F /* libDTCoreText_no_DTFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDTCoreText_no_DTFoundation.a;
+			remoteRef = 2AF3711B1ADC07B700C9733F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2AF3711E1ADC07B700C9733F /* DTCoreText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DTCoreText.framework;
+			remoteRef = 2AF3711D1ADC07B700C9733F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2AF310DD1AC80C6E00A6AADC /* Resources */ = {
@@ -489,6 +612,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					/Users/xlx/DTCoreText/Core/Source,
 					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source/DTHTMLParser,
+				);
+				GCC_INPUT_FILETYPE = automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source/DTHTMLParser,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source,
+					/Users/xlx/DTCoreText/Core/Source,
 				);
 				INFOPLIST_FILE = Memory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -514,6 +646,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					/Users/xlx/DTCoreText/Core/Source,
 					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source/DTHTMLParser,
+				);
+				GCC_INPUT_FILETYPE = automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source/DTHTMLParser,
+					/Users/xlx/DTCoreText/Externals/DTFoundation/Core/Source,
+					/Users/xlx/DTCoreText/Core/Source,
 				);
 				INFOPLIST_FILE = Memory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

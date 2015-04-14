@@ -14,6 +14,7 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         self.tabBarController?.tabBar.selectedImageTintColor=UIColor.purpleColor()
 
+    //    var a=DTAttributedTextView()
 
     }
 
